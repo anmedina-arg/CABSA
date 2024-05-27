@@ -1,3 +1,53 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": [
+		"next/core-web-vitals",
+		"plugin:storybook/recommended"
+	],
+	"overrides": [
+		{
+			"files": [
+				"*.ts",
+				"*.tsx"
+			]
+		}
+	],
+	"rules": {
+		"quotes": [
+			"warn",
+			"double"
+		],
+		"semi": [
+			"warn",
+			"always"
+		],
+		"object-curly-spacing": [
+			"warn",
+			"always"
+		],
+		"max-len": [
+			"warn",
+			{
+				"code": 120,
+				"tabWidth": 2
+			}
+		],
+		"no-console": [
+			"warn",
+			{
+				"allow": [
+					"warn",
+					"error"
+				]
+			}
+		],
+		"@next/next/no-img-element": "off",
+		"indent": [
+			"warn",
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"react-hooks/exhaustive-deps": "off"
+	}
 }
