@@ -1,7 +1,11 @@
 {
 	"extends": [
 		"next/core-web-vitals",
-		"plugin:storybook/recommended"
+		"plugin:storybook/recommended",
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:@typescript-eslint/recommended",
+		"prettier"
 	],
 	"overrides": [
 		{
@@ -12,9 +16,10 @@
 		}
 	],
 	"rules": {
+		"@typescript-eslint/no-unused-vars":"off",
 		"quotes": [
 			"warn",
-			"double"
+			"single"
 		],
 		"semi": [
 			"warn",
@@ -23,13 +28,6 @@
 		"object-curly-spacing": [
 			"warn",
 			"always"
-		],
-		"max-len": [
-			"warn",
-			{
-				"code": 120,
-				"tabWidth": 2
-			}
 		],
 		"no-console": [
 			"warn",
@@ -41,13 +39,21 @@
 			}
 		],
 		"@next/next/no-img-element": "off",
-		"indent": [
-			"warn",
-			"tab",
+		"react-hooks/exhaustive-deps": "off",
+		"camelcase": [
+			"error",
 			{
-				"SwitchCase": 1
+				"properties": "never"
 			}
 		],
-		"react-hooks/exhaustive-deps": "off"
+		"react/jsx-pascal-case": [
+			"error",
+			{
+				"allowAllCaps": true,
+				"ignore": []
+			}
+		],
+		"no-mixed-spaces-and-tabs":"error",
+		"indent": ["error", 2]
 	}
 }

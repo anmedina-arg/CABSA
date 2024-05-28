@@ -28,8 +28,7 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 
-// eslint disabled no-console
-console.log('hola');
+const holaMundo = 'hola Mundo';
 
 export const Button = ({
   primary = false,
@@ -44,7 +43,7 @@ export const Button = ({
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
+      className={['storybookButton', `storybook-button--${size}`, mode].join(
         ' '
       )}
       {...props}
