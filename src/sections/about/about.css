@@ -2,7 +2,6 @@
   padding: 4rem 4rem 2.5rem 4rem;
   display: flex;
   justify-content: center;
-  color: #15203b;
 }
 
 .divContainer {
@@ -20,7 +19,7 @@
 
 .aboutTitle {
   font-size: 5rem;
-  color: #ff5ec7;
+  color: var(--candyPink);
   line-height: 150%;
   margin-bottom: 3rem;
 }
@@ -29,7 +28,8 @@
   font-size: 2.5rem;
   line-height: 150%;
   width: 100%;
-  text-shadow: rgb(0, 0, 0, 0.25) 0 4px 4px;
+  color: var(--darkSlateBlue);
+  text-shadow: rgba(246, 184, 184, 0.25) 0 4px 4px;
 }
 
 .aboutText > span {

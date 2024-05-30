@@ -1,7 +1,24 @@
+import Image from 'next/image';
+import './contact.css';
+import { ContactForm } from '@/components/contactForm/contactForm';
+
 export function Contact() {
-  return(
-    <section>
-      Hello, I am a contact
+  return (
+    <section className="contactSection" id='contact'>
+      <div className="divContainerContact">
+        <header>
+          <h3 className="contactTitle">Contact Us</h3>
+        </header>
+        <p className="contactText">
+          Welcome to CABSA. We are here to assist you with all your financial
+          needs. Please complete the form below, and a member of our team will
+          get in touch with you shortly.
+        </p>
+        <div className="divForm">
+          <ContactForm />
+        </div>
+        <Image src="" alt="Contact image" className="imageContact" />
+      </div>
     </section>
   );
 }
