@@ -1,0 +1,23 @@
+.navbarContainer {
+  background-color: black;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 1vw 5vw;
+  position: fixed;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.itemsNavbarContainer {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 30vw;
+  /* height: 86px; */
+  aspect-ratio: 1/1;
+}
