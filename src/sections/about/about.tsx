@@ -1,7 +1,8 @@
 import Image from 'next/image';
-import cityImage from '../../assets/cityImage.webp';
-import tabletImage from '../../assets/tabletImage.webp';
-import workerImage from '../../assets/workerImage.webp';
+// import cityImage from '../../assets/cityImage.webp';
+// import tabletImage from '../../assets/tabletImage.webp';
+// import workerImage from '../../assets/workerImage.webp';
+import VRImage from '../../assets/VRImage.webp';
 import './about.css';
 
 export function About() {
@@ -24,9 +25,10 @@ export function About() {
           </div>
         </div>
         <div className='divImages'>
-          <Image src={workerImage} alt="About image" className='imagesAbout'/>
+          <Image src={VRImage} alt='About image' className='imagesAbout' />
+          {/* <Image src={workerImage} alt="About image" className='imagesAbout'/>
           <Image src={tabletImage} alt="About image" className='imagesAbout'/>
-          <Image src={cityImage} alt="About image" className='imagesAbout'/>
+          <Image src={cityImage} alt="About image" className='imagesAbout'/> */}
         </div>
       </div>
     </section>
