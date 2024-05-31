@@ -16,9 +16,7 @@ export function Contact() {
           needs. Please complete the form below, and a member of our team will
           get in touch with you shortly.
         </p>
-        <div className="divForm">
-          <ContactForm />
-        </div>
+        <ContactForm />
       </div>
     </section>
   );
