@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import './contact.css';
 import { ContactForm } from '@/components/contactForm/contactForm';
+import contactImage from '@/assets/contactImage.webp';
 
 export function Contact() {
   return (
-    <section className="contactSection" id='contact'>
+    <section className="contactSection">
+      <Image src={contactImage} alt="Contact image" className="imageContact" />
       <div className="divContainerContact">
         <header>
           <h3 className="contactTitle">Contact Us</h3>
@@ -17,7 +19,6 @@ export function Contact() {
         <div className="divForm">
           <ContactForm />
         </div>
-        <Image src="" alt="Contact image" className="imageContact" />
       </div>
     </section>
   );
