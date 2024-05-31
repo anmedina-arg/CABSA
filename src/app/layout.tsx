@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import './globals.css';
-import { mariaDPro, acuminVariableConcept } from './lib/font';
 
-const inter = Inter({ subsets: ['latin'] });
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['300', '500', '700', '900'],
+  style: ['italic', 'normal'],
+  display: 'swap'
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${mariaDPro.className} ${acuminVariableConcept.className}`}>{children}</body>
+      <body className={roboto.className}>{children}</body>
     </html>
   );
 }
