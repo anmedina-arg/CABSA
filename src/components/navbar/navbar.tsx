@@ -1,24 +1,45 @@
 import './navbar.css';
-import mainLogo from '../../assets/main-logo.png';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import Anchor from '../anchor/anchor';
 
 type NavbarProps = {
-	items: string[]
+  items: itemsNavbarProps[],
+  logo: StaticImageData
 }
 
-export function Navbar({ items }:NavbarProps) {
+export function Navbar({ items, logo }:NavbarProps) {
   return(
     <nav className='navbarContainer'>
       <Link href={'/'} className='link'>
-        <Image src={mainLogo} alt='logo CABSA' className='image'/>
+        <Image src={logo} alt='logo CABSA' className='image'/>
       </Link>
       <div className='itemsNavbarContainer'>
-        {items?.map((item, index) => <Anchor key={item} label={item} to='/'/>)}
+        {items?.map(({ title, path }:itemsNavbarProps) => <Anchor key={title} label={title} to={path}/>)}
       </div>
     </nav>
   );
 }
 
-export const itemsNavbar = ['about us','our services','news','contact us'];
+type itemsNavbarProps = {
+  title: string,
+  path: string
+}
+
+export const itemsNavbar: itemsNavbarProps[] = [
+  {
+    title: 'about us',
+    path: '/about'
+  },
+  {
+    title: 'our services',
+    path: '/services'
+  },
+  {
+    title: 'news',
+    path: '/news'
+  },
+  {
+    title: 'contact us',
+    path: 'contact'
+  }];

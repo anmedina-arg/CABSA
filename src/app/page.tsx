@@ -5,11 +5,12 @@ import { About } from '@/sections/about/about';
 import { Footer } from '@/components/footer/footer';
 import { Navbar, itemsNavbar } from '@/components/navbar/navbar';
 import { Contact } from '@/sections/contact/contact';
+import mainLogo from '../assets/main-logo.png'
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Navbar items={itemsNavbar}/>
+      <Navbar items={itemsNavbar} logo={mainLogo}/>
       <Hero />
       <About />
       <Services />
