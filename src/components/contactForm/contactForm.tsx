@@ -5,46 +5,93 @@ import {
   NEXT_PUBLIC_TEMPLATE_ID_EMAILJS,
 } from '@/utils/config';
 import './contactForm.css';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 export function ContactForm() {
   const [click, setClick] = useState(false);
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
+  const [inputs, setInputs] = useState({
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    email: ''
+  });
   const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState({
+    firstName: false,
+    lastName: false,
+    phoneNumber: false,
+    email: false
+  });
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   const refForm = useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (event: any) => {
+  function validate() {
+    const newErrors = {...errors};
+
+    if (!inputs.firstName) newErrors.firstName = true;
+    if (!inputs.lastName) newErrors.lastName = true;
+    if (!inputs.phoneNumber) newErrors.phoneNumber = true;
+    if (!inputs.email || !emailRegex.test(inputs.email)) newErrors.email = true;
+
+    return newErrors;
+  };
+
+  function handleInputChange(e: any) {
+
+    const newInput = {
+      ...inputs,
+      [e.target.name]: e.target.value
+    };
+    setInputs(newInput);
+    setErrors({
+      ...errors,
+      [e.target.name]: false
+    });
+  };
+
+  function handleSubmit(event: any) {
     event.preventDefault();
 
-    emailjs
-      .sendForm(
-        NEXT_PUBLIC_SERVICE_ID_EMAILJS,
-        NEXT_PUBLIC_TEMPLATE_ID_EMAILJS,
-        refForm.current || '',
-        {
-          publicKey: NEXT_PUBLIC_APIKEY_EMAILJS,
-        }
-      )
-      .then((result: any) => {
-        if (result.status === 200) {
-          setClick(true);
-          setTimeout(() => {
-            setClick(false);
-          }, 4000);
+    setErrors({
+      firstName: false,
+      lastName: false,
+      phoneNumber: false,
+      email: false
+    });
 
-          setEmail('');
-          setFirstName('');
-          setLastName('');
-          setMessage('');
-          setPhone('');
-        }
-      })
-      .catch((error: string) => console.error(error));
+    const validation = validate();
+
+    setErrors({...validation});
+
+    if (!validation.firstName && !validation.lastName && !validation.phoneNumber && !validation.email) {
+      emailjs
+        .sendForm(
+          NEXT_PUBLIC_SERVICE_ID_EMAILJS,
+          NEXT_PUBLIC_TEMPLATE_ID_EMAILJS,
+          refForm.current || '',
+          {
+            publicKey: NEXT_PUBLIC_APIKEY_EMAILJS,
+          }
+        )
+        .then((result: any) => {
+          if (result.status === 200) {
+            setClick(true);
+            setInputs({
+              firstName: '',
+              lastName: '',
+              phoneNumber: '',
+              email: ''
+            });
+            setMessage('');
+            setTimeout(() => {
+              setClick(false);
+            }, 4000);
+          }
+        })
+        .catch((error: string) => console.error(error));
+    };
   };
 
   function scrollToElement(element: any) {
@@ -72,64 +119,64 @@ export function ContactForm() {
       >
         <div className="divNameForm">
           <fieldset className="fieldsetStyles marginRight">
-            <label htmlFor="" className="labelStyles">
+            <label htmlFor="" className={`labelStyles ${errors.firstName ? 'labelError' : undefined}`}>
               First name*
             </label>
             <input
               name="firstName"
               type="text"
-              value={firstName}
-              onChange={event => setFirstName(event.target.value)}
+              spellCheck='false'
+              value={inputs.firstName}
+              onChange={handleInputChange}
               onFocus={event => scrollToElement(event.target)}
               placeholder="John"
-              required
-              className="inputStylesName"
+              className={`inputStylesName ${errors.firstName ? 'inputStyleError' : undefined}`}
             />
           </fieldset>
           <fieldset className="fieldsetStyles">
-            <label htmlFor="" className="labelStyles">
+            <label htmlFor="" className={`labelStyles ${errors.lastName ? 'labelError' : undefined}`}>
               Last name*
             </label>
             <input
               name="lastName"
               type="text"
-              value={lastName}
-              onChange={event => setLastName(event.target.value)}
+              spellCheck='false'
+              value={inputs.lastName}
+              onChange={handleInputChange}
               onFocus={event => scrollToElement(event.target)}
               placeholder="Smith"
-              required
-              className="inputStylesName"
+              className={`inputStylesName ${errors.lastName ? 'inputStyleError' : undefined}`}
             />
           </fieldset>
         </div>
         <fieldset className="fieldsetStyles">
-          <label htmlFor="" className="labelStyles">
+          <label htmlFor="" className={`labelStyles ${errors.phoneNumber ? 'labelError' : undefined}`}>
             Phone number*
           </label>
           <input
             type="text"
             name="phoneNumber"
-            value={phone}
-            onChange={event => setPhone(event.target.value)}
+            spellCheck='false'
+            value={inputs.phoneNumber}
+            onChange={handleInputChange}
             onFocus={event => scrollToElement(event.target)}
             placeholder="+1 (000) 000 00 00"
-            required
-            className="inputStyles"
+            className={`inputStyles ${errors.phoneNumber ? 'inputStyleError' : undefined}`}
           />
         </fieldset>
         <fieldset className="fieldsetStyles">
-          <label htmlFor="" className="labelStyles">
+          <label htmlFor="" className={`labelStyles ${errors.email ? 'labelError' : undefined}`}>
             Email*
           </label>
           <input
-            type="email"
+            type="text"
             name="email"
-            value={email}
-            onChange={event => setEmail(event.target.value)}
+            spellCheck='false'
+            value={inputs.email}
+            onChange={handleInputChange}
             onFocus={event => scrollToElement(event.target)}
             placeholder="example@example.com"
-            required
-            className="inputStyles"
+            className={`inputStyles ${errors.email ? 'inputStyleError' : undefined}`}
           />
         </fieldset>
         <fieldset className="fieldsetStyles">
@@ -146,6 +193,11 @@ export function ContactForm() {
           ></textarea>
         </fieldset>
         <button className={'btnStyles'}>Submit</button>
+        { 
+          errors.firstName || errors.lastName || errors.phoneNumber || errors.email 
+          ? <p className='errorText'>Los campos con * son obligatorios.</p> 
+          : <div className='errorDiv'></div>
+        } 
       </form>
     </>
   );
