@@ -195,7 +195,7 @@ export function ContactForm() {
         <button className={'btnStyles'}>Submit</button>
         { 
           errors.firstName || errors.lastName || errors.phoneNumber || errors.email 
-          ? <p className='errorText'>Los campos con * son obligatorios.</p> 
+          ? <p className='errorText'>* Required fields.</p> 
           : <div className='errorDiv'></div>
         } 
       </form>
