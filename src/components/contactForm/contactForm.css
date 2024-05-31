@@ -1,0 +1,154 @@
+.divNameForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.fieldsetStyles {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  justify-content: space-between;
+}
+
+.labelStyles {
+  color: white;
+  font-size: 1.6rem;
+  line-height: 150%;
+  margin-bottom: 1rem;
+}
+
+.marginRight {
+  margin-right: 4rem;
+}
+
+.inputStylesName {
+  color: var(--darkSlateBlue);
+  background-color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  border: 2px solid #e0e0e0;
+  outline: none;
+  height: 5rem;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.inputStylesName::placeholder {
+  color: var(--mediumGray);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  border: none;
+}
+
+.inputStyles {
+  color: var(--darkSlateBlue);
+  width: 100%;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  border: 2px solid #e0e0e0;
+  outline: none;
+  height: 5rem;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.inputStyles::placeholder {
+  color: var(--mediumGray);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  border: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+.textAreaMessage {
+  background-color: white;
+  color: var(--darkSlateBlue);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 150%;
+  font-family: 'Work Sans', sans-serif;
+  width: 100%;
+  height: 15rem;
+  border: 2px solid #e0e0e0;
+  resize: none;
+  outline: none;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin-bottom: 4rem;
+}
+
+.textAreaMessage::placeholder {
+  color: var(--mediumGray);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  border: none;
+}
+
+.textAreaMessage::-webkit-scrollbar {
+  width: 12px;
+}
+
+.textAreaMessage::-webkit-scrollbar-thumb {
+  background-color: rgb(6, 5, 15);
+  border-radius: 20px;
+  border: 3px solid var(--white);
+}
+
+.btnStyles {
+  color: white;
+  width: 100%;
+  height: 5rem;
+  border-radius: 1rem;
+  background-color: var(--candyPink);
+  border: none;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnStyles:hover {
+  cursor: pointer;
+}
+
+.messageSent {
+  position: fixed;
+  top: 6rem;
+  margin: 0 -2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pSentMessage {
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #89df80;
+  width: 10rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4rem;
+}
