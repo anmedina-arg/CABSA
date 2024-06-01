@@ -6,7 +6,7 @@ import Home from '@/app/page';
 
 
 const meta = {
-  title: 'Example/Page',
+  title: 'Page',
   component: Home,
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
