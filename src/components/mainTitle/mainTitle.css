@@ -1,0 +1,11 @@
+.mainTitle {
+  font-size: 7rem;
+  color: var(--white);
+  line-height: 150%;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.pink {
+  color: var(--candyPink);
+}

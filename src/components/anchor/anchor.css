@@ -3,42 +3,27 @@
   text-align: center;
   align-content: center;
   background-color: var(--deepNavy);
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
   border-radius: 1rem;
-  width: 133px;
-  height: 52px;
+  display: inline-block;
+  font-size: 2rem;
+  transition:
+    background-color 0.1s linear,
+    transform 0.1s linear;
 }
 
-.link {
+li .link {
   font-weight: 400;
   color: var(--white);
   text-decoration: none;
   text-transform: capitalize;
-  font-size: 1rem;
+  display: inline-block;
 }
 
 .anchor:hover,
 .anchor:active,
 .anchor::selection {
+  transform: scale(0.95);
   background-color: var(--skyBlue);
   cursor: pointer;
-  animation: 0.1s linear appear;
 }
-
-@keyframes appear {
-  0% {
-    background-color: var(--deepNavy);
-  }
-  100% {
-    background-color: var(--skyBlue);
-  }
-}
-/* @media (max-width: 768px) {
-	.anchor > a {
-		font-size: 2rem;
-	}
-
-	.small {
-		font-size: 0.7rem !important;
-	}
-} */
