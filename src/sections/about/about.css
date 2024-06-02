@@ -2,7 +2,6 @@
   padding: 4rem 8rem 2.5rem 8rem;
   display: flex;
   justify-content: center;
-  background-color: var(--deepNavy);
 }
 
 .divContainer {
@@ -18,12 +17,12 @@
   margin-left: 5rem;
 }
 
-.aboutTitle {
+/* .aboutTitle {
   font-size: 7rem;
   color: var(--candyPink);
   line-height: 150%;
   margin-bottom: 3rem;
-}
+} */
 
 .aboutText {
   font-size: 3.5rem;

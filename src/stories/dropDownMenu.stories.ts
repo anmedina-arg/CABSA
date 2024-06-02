@@ -3,22 +3,24 @@ import { fn } from '@storybook/test';
 import { Navbar } from '@/components/navbar/navbar';
 import { itemsNavbar } from '@/components/navbar/navbar';
 import mainLogo from '../assets/main-logo.png';
+import DropDownMenu, { IconDD } from '@/components/dropDownMenu/dropDownMenu';
 
 const meta = {
-  title: 'NavBar',
-  component: Navbar,
+  title: 'Drop Down Menu',
+  component: DropDownMenu,
   tags: ['autodocs'],
   parameters: {
-    layout: 'fullscreen',
+    layout: 'centered',
   },
-} satisfies Meta<typeof Navbar>;
+} satisfies Meta<typeof DropDownMenu>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NavBar: Story = {
+
+export const DropDownMenuComponent: Story = {
   args: {
-    items: itemsNavbar,
-    logo: mainLogo
+    children: 'prueba',
+    title: 'structured notes',
   }
 };

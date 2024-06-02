@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import backgroundImg from '../../assets/HeroBackground.webp';
 import './hero.css';
+import SectionLayout from '@/components/sectionLayout/sectionLayout';
 
 export function Hero() {
   return (
-    <>
+    <SectionLayout id="hero">
       <section id="hero" className="heroSection">
         <Image
           src={backgroundImg}
@@ -14,7 +15,7 @@ export function Hero() {
         />
         <div className="heroContainer">
           <div className="heroTitleContainer">
-            <h1 className={'heroTitle'}>
+            <h1 className="heroTitle">
               We offer <strong>empathetic</strong>,{' '}
               <strong>personalized</strong> and <strong>impactful</strong>{' '}
               financial solutions
@@ -27,6 +28,6 @@ export function Hero() {
         </div>
       </section>
       <div className="heroSeparator"></div>
-    </>
+    </SectionLayout>
   );
 }

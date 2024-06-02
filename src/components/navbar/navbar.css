@@ -5,19 +5,18 @@
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  padding: 1vw 5vw;
+  padding: 2rem 3rem;
+  z-index: 50;
   position: fixed;
-  z-index: 100;
-  box-sizing: border-box;
 }
 
 .itemsNavbarContainer {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .image {
-  width: 30vw;
-  /* height: 86px; */
-  aspect-ratio: 1/1;
+  width: 300px;
+  height: 100%;
 }
