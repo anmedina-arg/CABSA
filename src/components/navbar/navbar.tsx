@@ -11,7 +11,7 @@ type NavbarProps = {
 export function Navbar({ items, logo }:NavbarProps) {
   return(
     <nav className='navbarContainer'>
-      <Link href={'/'} className='link'>
+      <Link href={'#hero'} className='link'>
         <Image src={logo} alt='logo CABSA' className='image'/>
       </Link>
       <div className='itemsNavbarContainer'>
@@ -29,17 +29,17 @@ type itemsNavbarProps = {
 export const itemsNavbar: itemsNavbarProps[] = [
   {
     title: 'about us',
-    path: '/about'
+    path: '#about'
   },
   {
     title: 'our services',
-    path: '/services'
+    path: '#services'
   },
-  {
-    title: 'news',
-    path: '/news'
-  },
+  // {
+  //   title: 'news',
+  //   path: '#news'
+  // },
   {
     title: 'contact us',
-    path: 'contact'
+    path: '#contact'
   }];

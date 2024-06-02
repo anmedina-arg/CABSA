@@ -7,6 +7,7 @@
   margin: 0;
   padding: 2rem 3rem;
   z-index: 50;
+  position: fixed;
 }
 
 .itemsNavbarContainer {
