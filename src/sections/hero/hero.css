@@ -3,7 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  margin-top: 6rem;
+  height: 58rem;
   width: 100%;
   position: relative;
 }
@@ -19,6 +20,7 @@
   align-items: center;
   justify-content: space-between;
   width: 60%;
+  max-width: 80rem;
 }
 
 .heroTitleContainer {
@@ -30,12 +32,11 @@
   text-align: center;
   font-weight: 300;
   line-height: 150%;
-  color: var(--lightGray);
+  color: var(--snowWhite);
 }
 
 .heroTitle strong {
   font-weight: 700;
-  color: var(--snowWhite);
 }
 
 .heroSubTitle {
@@ -47,13 +48,19 @@
 }
 
 .heroButtonContainer {
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .heroButton {
-  width: 10rem;
-  height: 4rem;
+  width: 14rem;
+  height: 5rem;
   border: none;
   border-radius: 1.2rem;
   background-color: var(--skyBlue);
+  font-size: 1.6rem;
+}
+
+.heroSeparator {
+  height: 16rem;
+  background-color: var(--deepNavy);
 }
