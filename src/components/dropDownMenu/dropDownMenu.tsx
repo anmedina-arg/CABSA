@@ -21,10 +21,9 @@ function DropDownMenu({ children, title, open = false }: DropDownMenuProps) {
         <IconDD/>
         <span className='spanTitles' >{title}</span>
       </div>
-      {/* <ul className={init ? 'hiden' : isOpen ? 'modalIn' : 'modalOut'}> */}
-      <ul className={isOpen ? 'modalIn' : 'hiden' }>
-        <li>{children}</li>
-      </ul>
+      <div className={isOpen ? 'showMenu' : 'hiddenMenu' }>
+        {children}
+      </div>
     </div>
   );
 }
