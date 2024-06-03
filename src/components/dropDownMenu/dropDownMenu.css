@@ -1,34 +1,39 @@
 .dropDownContainer {
   cursor: pointer;
-  background: #000;
-  /* position: fixed; */
 }
 
 .headerDropDown {
   display: flex;
-  gap: 0.5rem;
   align-items: center;
 }
 
 .spanTitles {
+  --font-size: 4.5rem;
+
   text-transform: uppercase;
   color: var(--white);
-  margin-left: 1rem;
-  font-size: 1.32rem;
+  margin-left: 4rem;
+  font-size: var(--font-size);
+  z-index: 2;
+  line-height: 1;
 }
 
-.hiden {
+.hiddenMenu {
   list-style: none;
   display: none;
 }
 
-.modalIn {
+.showMenu {
+  --font-size: 4.5rem;
+
   position: relative;
-  z-index: 50;
+  top: calc(var(--font-size) / -2);
+  width: 100%;
   border-left: 2px solid white;
-  margin-left: 10px;
-  padding: 0 0 0 2rem;
+  margin-left: 1.4rem;
   animation: scale-up-vertical-top 0.2s linear;
+  padding-top: calc(var(--font-size) / 2);
+  background-origin: content-box;
 }
 
 @keyframes scale-up-vertical-top {
@@ -52,8 +57,9 @@
 }
 
 .iconDD {
-  width: 20px;
-  height: 20px;
+  width: 3rem;
+  height: 3rem;
   background: linear-gradient(-45deg, #fff 15%, #000 90%);
   border-radius: 50%;
+  z-index: 10;
 }
