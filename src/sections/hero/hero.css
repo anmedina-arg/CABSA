@@ -3,13 +3,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 6rem;
-  height: 58rem;
+  height: 54rem;
   width: 100%;
   position: relative;
+  overflow-y: hidden;
 }
 
 .heroBackground {
+  width: 100%;
+  position: absolute;
   object-fit: cover;
   z-index: -5;
 }
@@ -19,7 +21,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 60%;
   max-width: 80rem;
 }
 
@@ -45,6 +46,7 @@
   font-weight: 300;
   text-transform: uppercase;
   color: var(--snowWhite);
+  font-family: var(--acuminFont);
 }
 
 .heroButtonContainer {
@@ -57,7 +59,12 @@
   border: none;
   border-radius: 1.2rem;
   background-color: var(--skyBlue);
+}
+
+.heroButton a {
+  text-decoration: none;
   font-size: 1.6rem;
+  color: black;
 }
 
 .heroSeparator {
