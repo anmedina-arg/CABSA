@@ -1,25 +1,25 @@
 import './navbar.css';
-import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
+
 import Anchor from '../anchor/anchor';
+import CABSAMainLogo from '../CABSAMainLogo/cabsaMainLogo';
+
 
 type NavbarProps = {
   items: itemsNavbarProps[],
-  logo: StaticImageData
 }
 
-export function Navbar({ items, logo }:NavbarProps) {
+export function Navbar({ items }:NavbarProps) {
   return(
     <nav className='navbarContainer'>
-      <Link href={'#hero'} className='link'>
-        <Image src={logo} alt='logo CABSA' className='image'/>
-      </Link>
+      <CABSAMainLogo/>
       <div className='itemsNavbarContainer'>
         {items?.map(({ title, path }:itemsNavbarProps) => <Anchor key={title} label={title} to={path}/>)}
       </div>
     </nav>
   );
 }
+
+
 
 type itemsNavbarProps = {
   title: string,

@@ -13,7 +13,7 @@
 }
 
 li .link {
-  font-weight: 400;
+  font-weight: 300;
   color: var(--white);
   text-decoration: none;
   text-transform: capitalize;
