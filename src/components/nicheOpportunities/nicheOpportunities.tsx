@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import { Card } from '../cards/cards';
-import './structuredNotes.css';
-import { structuredNotesCards } from '@/utils/CardsValues';
+import './nicheOpportunities.css';
+import { nicheCards } from '@/utils/CardsValues';
 
-export function StructuredNotes() {
-  const width = '34rem';
+export function NicheOpportunities() {
+  const width = '45rem';
   const height = '20rem';
 
   return (
-    <div className="divContainerCards">
-      {structuredNotesCards.map((card, key) => {
+    <div className="divContainerNiche">
+      {nicheCards.map((card, key) => {
         return (
           <Card
             key={key}
@@ -18,6 +18,7 @@ export function StructuredNotes() {
             height={height}
             flexDirection={card.flexDirection}
             turnCard={card.turnCard}
+            paragraph={card.paragraph}
           >
             <Image src={card.icon} alt="icon" className='logo'/>
           </Card>
