@@ -26,7 +26,3 @@ html {
 body {
   background-color: var(--deepNavy);
 }
-
-::-webkit-scrollbar {
-  display: none;
-}
