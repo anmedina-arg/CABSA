@@ -16,10 +16,10 @@ function DropDownMenu({ children, title, open = false }: DropDownMenuProps) {
   }
 
   return (
-    <div className='dropDownContainer' onClick={handleDropDown}>
+    <div className='dropDownContainer'>
       <div className='headerDropDown'>
         <IconDD/>
-        <span className='spanTitles' >{title}</span>
+        <span className='spanTitles' onClick={handleDropDown}>{title}</span>
       </div>
       <div className={isOpen ? 'showMenu' : 'hiddenMenu' }>
         {children}
