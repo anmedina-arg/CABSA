@@ -1,17 +1,28 @@
+'use client';
 import './navbar.css';
 
 import Anchor from '../anchor/anchor';
 import CABSAMainLogo from '../CABSAMainLogo/cabsaMainLogo';
-
+import NavBarMobile from './navbar-mobile';
+import { useState } from 'react';
 
 type NavbarProps = {
   items: itemsNavbarProps[],
 }
 
-export function Navbar({ items }:NavbarProps) {
+export function Navbar({ items }: NavbarProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return(
     <nav className='navbarContainer'>
-      <CABSAMainLogo/>
+      <CABSAMainLogo />
+      <button className="navbarToggle" onClick={toggleMenu}>
+        <NavBarMobile itemsNavbar={items}/>
+      </button>
       <div className='itemsNavbarContainer'>
         {items?.map(({ title, path }:itemsNavbarProps) => <Anchor key={title} label={title} to={path}/>)}
       </div>
@@ -21,7 +32,7 @@ export function Navbar({ items }:NavbarProps) {
 
 
 
-type itemsNavbarProps = {
+export type itemsNavbarProps = {
   title: string,
   path: string
 }
