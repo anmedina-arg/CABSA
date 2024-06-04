@@ -1,0 +1,12 @@
+.divContainerNiche {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 9rem;
+  width: auto;
+}

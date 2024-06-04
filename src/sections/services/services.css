@@ -1,0 +1,11 @@
+.divContainerServices {
+  padding: 10rem 8rem 5rem 8rem;
+}
+
+.servicesContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  /* height: 100%; */
+  position: relative;
+}

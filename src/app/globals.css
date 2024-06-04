@@ -1,6 +1,7 @@
 :root {
   --deepNavy: #00030b;
   --darkSlateBlue: #15203b;
+  --deepTeal: #004d69;
   --skyBlue: #0099c9;
   --candyPink: #ff5ec7;
   --charcoalGray: #454545;
@@ -15,7 +16,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 html {
@@ -24,8 +25,4 @@ html {
 
 body {
   background-color: var(--deepNavy);
-}
-
-::-webkit-scrollbar {
-  display: none;
 }

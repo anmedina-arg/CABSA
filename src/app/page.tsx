@@ -6,7 +6,7 @@ import mainLogo from '../assets/main-logo.png';
 export default function Home() {
   return (
     <main>
-      <Navbar logo={mainLogo} items={itemsNavbar}/>
+      <Navbar items={itemsNavbar}/>
       <HomePage/>
     </main>
   );

@@ -1,0 +1,12 @@
+.divContainerSme {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.h3Styles {
+  font-size: 4rem;
+  font-weight: 400;
+}

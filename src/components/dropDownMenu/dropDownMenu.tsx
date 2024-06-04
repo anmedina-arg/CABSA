@@ -1,6 +1,7 @@
 'use client';
 import { ReactElement, useState } from 'react';
 import './dropDownMenu.css';
+import Link from 'next/link';
 
 type DropDownMenuProps = {
 	children: any,
@@ -16,15 +17,15 @@ function DropDownMenu({ children, title, open = false }: DropDownMenuProps) {
   }
 
   return (
-    <div className='dropDownContainer' onClick={handleDropDown}>
+    <div className='dropDownContainer'>
       <div className='headerDropDown'>
         <IconDD/>
-        <span className='spanTitles' >{title}</span>
+        <span className='spanTitles' onClick={handleDropDown}>{title}</span>
       </div>
-      {/* <ul className={init ? 'hiden' : isOpen ? 'modalIn' : 'modalOut'}> */}
-      <ul className={isOpen ? 'modalIn' : 'hiden' }>
-        <li>{children}</li>
-      </ul>
+      <div className={isOpen ? 'showMenu' : 'hiddenMenu' }>
+        {children}
+        <Link href={'#contact'} className='buttonLink'>Learn more</Link>
+      </div>
     </div>
   );
 }

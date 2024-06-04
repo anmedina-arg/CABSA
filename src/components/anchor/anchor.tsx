@@ -3,7 +3,8 @@ import './anchor.css';
 
 type AnchorProps = {
 	label: string,
-	to: string,
+  to: string,
+  setShow?: any
 }
 
 function Anchor({ label, to }:AnchorProps) {
