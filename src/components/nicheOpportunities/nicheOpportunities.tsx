@@ -20,7 +20,7 @@ export function NicheOpportunities() {
             turnCard={card.turnCard}
             paragraph={card.paragraph}
           >
-            <Image src={card.icon} alt="icon" className='logo'/>
+            <Image src={card.icon || ''} alt="icon" className='logo'/>
           </Card>
         );
       })}
