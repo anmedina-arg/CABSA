@@ -15,7 +15,8 @@ interface Card {
   flexDirection: 'column' | 'column-reverse';
   turnCard: boolean;
   paragraph?: string;
-  icon: StaticImageData;
+  icon?: StaticImageData;
+  subtitle?: string;
 }
 
 export const nicheCards: Card[] = [
@@ -79,5 +80,32 @@ export const structuredNotesCards: Card[] = [
     flexDirection: 'column',
     turnCard: false,
     icon: brandBoost
+  }
+];
+
+export const smeCards: Card[] = [
+  {
+    title: 'ESTIMATED RETURN',
+    flexDirection: 'column',
+    turnCard: false,
+    subtitle: '10%'
+  },
+  {
+    title: 'TOTAL FINANCING',
+    flexDirection: 'column',
+    turnCard: false,
+    subtitle: '5B'
+  },
+  {
+    title: 'LIQUIDITY IN',
+    flexDirection: 'column-reverse',
+    turnCard: false,
+    subtitle: '90 DAYS'
+  },
+  {
+    title: 'ASSET BACKED',
+    flexDirection: 'column-reverse',
+    turnCard: false,
+    subtitle: 'LOANS'
   }
 ];

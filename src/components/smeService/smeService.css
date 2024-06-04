@@ -1,4 +1,4 @@
-.divContainerNiche {
+.divContainerSme {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.logo {
-  height: 9rem;
-  width: auto;
+.h3Styles {
+  font-size: 4rem;
+  font-weight: 400;
 }

@@ -22,9 +22,9 @@ export function Card({
   return (
     <div
       className={turnCard ? 'turnCard' : 'divContainerCard'}
-      style={{ width: width, height: height, flexDirection: flexDirection }}
+      style={{ width: width, height: height }}
     >
-      <div className={turnCard ? 'front' : 'divContainerIcon'}>
+      <div className={turnCard ? 'front' : 'divContainerIcon'} style={{ flexDirection: flexDirection }}>
         {children}
         <h5
           className={`titleStyles ${flexDirection === 'column' ? 'normal' : 'reverse'}`}
