@@ -3,6 +3,7 @@ import { Services } from '@/sections/services/services';
 import { About } from '@/sections/about/about';
 import { Footer } from '@/components/footer/footer';
 import { Contact } from '@/sections/contact/contact';
+import { footerItems } from '@/components/footer/footer';
 
 const HomePage = () => {
   return (
@@ -11,7 +12,7 @@ const HomePage = () => {
       <About />
       <Services />
       <Contact />
-      <Footer />
+      <Footer footerItems={footerItems} />
     </>
   );
 };
