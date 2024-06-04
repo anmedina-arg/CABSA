@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import SectionLayout from '@/components/sectionLayout/sectionLayout';
+// import VideoBackground from '../../components/videoBackground/videoBackground.tsx';
+import VideoBackground from '@/components/videoBackground/videoBackground';
 import { acuminFont } from '@/utils/fonts';
 import './hero.css';
 export function Hero() {
@@ -7,13 +9,7 @@ export function Hero() {
     <SectionLayout id="hero">
       <>
         <section id="hero" className="heroSection">
-          <video
-            autoPlay
-            loop
-            src="/videos/VIDEO_WEB_MAIN_HERO.webm"
-            muted
-            className="heroBackground"
-          ></video>
+          <VideoBackground />
           <div className="heroContainer">
             <div className="heroTitleContainer">
               <h1 className="heroTitle">
@@ -26,9 +22,9 @@ export function Hero() {
               </h2>
             </div>
             <div className="heroButtonContainer">
-              <button className="heroButton">
-                <Link href={'#contact'}>Contact us</Link>{' '}
-              </button>
+              <Link href={'#contact'}>
+                <button className="heroButton">Contact Us</button>
+              </Link>
             </div>
           </div>
         </section>
