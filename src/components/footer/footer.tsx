@@ -31,6 +31,7 @@ export function Footer({ footerItems }: FooterProps) {
         </div>
       </div>
       <div className="footerRight">
+        <h4 className='siteMap'>Site map</h4>
         {
           footerItems?.map(({ pathTo, label }: FooterLinkProps) => <FooterLink key={label} pathTo={pathTo} label={label} />)
         }
@@ -53,10 +54,6 @@ export const FooterLink = ({ pathTo, label }: FooterLinkProps): JSX.Element => {
 };
 
 export const footerItems: FooterLinkProps[] = [
-  {
-    label: 'site map',
-    pathTo: ''
-  },
   {
     label: 'about us',
     pathTo: '#about'
