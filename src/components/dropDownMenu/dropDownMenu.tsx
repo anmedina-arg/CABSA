@@ -1,6 +1,7 @@
 'use client';
 import { ReactElement, useState } from 'react';
 import './dropDownMenu.css';
+import Link from 'next/link';
 
 type DropDownMenuProps = {
 	children: any,
@@ -23,6 +24,7 @@ function DropDownMenu({ children, title, open = false }: DropDownMenuProps) {
       </div>
       <div className={isOpen ? 'showMenu' : 'hiddenMenu' }>
         {children}
+        <Link href={'#contact'} className='buttonLink'>Learn more</Link>
       </div>
     </div>
   );

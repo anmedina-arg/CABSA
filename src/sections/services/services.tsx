@@ -3,6 +3,7 @@ import MainTitle from '@/components/mainTitle/mainTitle';
 import SectionLayout from '@/components/sectionLayout/sectionLayout';
 import './services.css';
 import { StructuredNotes } from '@/components/structuredNotes/structuredNotes';
+import { NicheOpportunities } from '@/components/nicheOpportunities/nicheOpportunities';
 
 export function Services() {
   return (
@@ -15,7 +16,9 @@ export function Services() {
           </DropDownMenu>
           <DropDownMenu title="sme u.s. lending found">hola</DropDownMenu>
           <DropDownMenu title="club deals">hola</DropDownMenu>
-          <DropDownMenu title="niche opportunities">hola</DropDownMenu>
+          <DropDownMenu title="niche opportunities">
+            <NicheOpportunities />
+          </DropDownMenu>
           <DropDownMenu title="alternative platforms">hola</DropDownMenu>
         </div>
       </div>
