@@ -3,20 +3,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 54rem;
+  height: 100vh;
   width: 100%;
   position: relative;
-  overflow-y: hidden;
-  mask-image: linear-gradient(to bottom, black 80%, transparent);
-  -webkit-mask-composite: destination-in;
-  mask-composite: intersect;
+  padding-top: var(--padingTop);
 }
 
 .heroBackground {
   width: 100%;
   position: absolute;
-  object-fit: cover;
+  object-fit: fill;
   z-index: -5;
+  mask-image: linear-gradient(to left, black 80%, transparent),
+    linear-gradient(to right, black 80%, transparent),
+    linear-gradient(to bottom, black 80%, transparent);
+  -webkit-mask-image: linear-gradient(to left, black 80%, transparent),
+    linear-gradient(to right, black 80%, transparent),
+    linear-gradient(to bottom, black 80%, transparent);
+  -webkit-mask-composite: destination-in;
+  mask-composite: intersect;
 }
 
 .heroContainer {
@@ -24,6 +29,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  gap: 4rem;
   max-width: 80rem;
 }
 
@@ -52,30 +58,75 @@
   font-family: var(--acuminFont);
 }
 
-.heroButtonContainer {
-  margin-top: 5rem;
-}
-
 .heroButton {
-  width: 14rem;
-  height: 5rem;
+  /* width: 14rem; */
+  /* height: 5rem; */
+  padding: 1rem 2rem;
   border: none;
   border-radius: 1.2rem;
   background-color: var(--skyBlue);
   text-decoration: none;
-  font-size: 1.6rem;
-  font-weight: 300;
+  font-size: 1.8rem;
+  font-weight: 700;
   color: var(--snowWhite);
   transition: 400ms ease;
 }
 
 .heroButton:hover {
   cursor: pointer;
-  font-size: 1.7rem;
   color: var(--lightGray);
 }
 
-.heroSeparator {
-  height: 16rem;
-  background-color: var(--deepNavy);
+@media screen and (max-width: 922px) {
+  .heroContainer {
+    max-width: 60rem;
+  }
+
+  .heroTitle {
+    font-size: 4.5rem;
+  }
+
+  .heroSubTitle {
+    font-size: 1.5rem;
+  }
+
+  .heroButton {
+    font-size: 1.35rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroContainer {
+    max-width: 50rem;
+  }
+
+  .heroTitle {
+    font-size: 3.8rem;
+  }
+
+  .heroSubTitle {
+    font-size: 1.25rem;
+  }
+
+  .heroButton {
+    font-size: 1.12rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .heroContainer {
+    max-width: 40rem;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroSubTitle {
+    font-size: 1rem;
+  }
+
+  .heroButton {
+    font-size: 0.9rem;
+  }
 }
