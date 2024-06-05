@@ -12,7 +12,7 @@
     transform 0.1s linear;
 }
 
-li .link {
+.link {
   font-weight: 300;
   color: var(--white);
   text-decoration: none;

@@ -2,17 +2,16 @@ import Link from 'next/link';
 import './anchor.css';
 
 type AnchorProps = {
-	label: string,
-  to: string,
-  setShow?: any
-}
+  label: string;
+  to: string;
+  setShow?: any;
+};
 
-function Anchor({ label, to }:AnchorProps) {
-
+function Anchor({ label, to }: AnchorProps) {
   return (
-    <li className='anchor'>
-      <Link href={to} className='link'>{label}</Link>
-    </li>
+    <Link href={to} className="anchor link">
+      {label}
+    </Link>
   );
 }
 
