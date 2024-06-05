@@ -7,7 +7,7 @@ export function Contact() {
   return (
     <section className="contactSection">
       <Image src={contactImage} alt="Contact image" className="imageContact" />
-      <div className="divContainerContact">
+      <div className="divContainerContact" id='contact'>
         <header>
           <h3 className="contactTitle">Contact Us</h3>
         </header>

@@ -6,10 +6,11 @@ import Link from 'next/link';
 type DropDownMenuProps = {
 	children: any,
 	title: string,
-	open?: boolean
+	open?: boolean,
+  linkButton?: boolean
 }
 
-function DropDownMenu({ children, title, open = false }: DropDownMenuProps) {
+function DropDownMenu({ children, title, open = false, linkButton }: DropDownMenuProps) {
   const [isOpen, setIsOpen] = useState(open);
 
   function handleDropDown() {
@@ -24,7 +25,10 @@ function DropDownMenu({ children, title, open = false }: DropDownMenuProps) {
       </div>
       <div className={isOpen ? 'showMenu' : 'hiddenMenu' }>
         {children}
-        <Link href={'#contact'} className='buttonLink'>Learn more</Link>
+        { linkButton ? 
+          <Link href={'#contact'} className='buttonLink'>Learn more</Link> :
+          undefined
+        }
       </div>
     </div>
   );

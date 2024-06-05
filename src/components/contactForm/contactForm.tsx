@@ -115,7 +115,6 @@ export function ContactForm() {
         </div>
       ) : undefined}
       <form
-        id="contact"
         ref={refForm}
         action=""
         onSubmit={handleSubmit}
