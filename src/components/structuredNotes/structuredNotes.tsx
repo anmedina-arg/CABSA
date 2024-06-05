@@ -5,7 +5,7 @@ import { structuredNotesCards } from '@/utils/CardsValues';
 
 export function StructuredNotes() {
   const width = '34rem';
-  const height = '20rem';
+  const height = '18rem';
 
   return (
     <div className="divContainerCards">
@@ -19,7 +19,7 @@ export function StructuredNotes() {
             flexDirection={card.flexDirection}
             turnCard={card.turnCard}
           >
-            <Image src={card.icon} alt="icon" className='logo'/>
+            <Image src={card.icon || ''} alt="icon" className='logo'/>
           </Card>
         );
       })}
