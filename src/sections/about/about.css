@@ -38,3 +38,76 @@
   min-width: 10rem;
   height: auto;
 }
+
+.imagesAboutMobile {
+  display: none;
+}
+
+@media (width <= 768px) {
+  .sectionAbout {
+    padding: 8rem 2rem 0 2rem;
+  }
+
+  .divContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .aboutText {
+    width: 97.8%;
+    line-height: 190%;
+  }
+
+  .divImages {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imagesAbout {
+    display: none;
+  }
+
+  .imagesAboutMobile {
+    display: block;
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (width > 768px) and (width <= 991px) {
+  .sectionAbout {
+    padding: 8rem 4rem 0 4rem;
+  }
+
+  .divContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  .aboutText {
+    font-size: 3rem;
+    max-width: 60rem;
+    line-height: 190%;
+  }
+
+  .divImages {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+  }
+
+  .imagesAbout {
+    display: none;
+  }
+
+  .imagesAboutMobile {
+    display: block;
+    width: 80%;
+    height: auto;
+  }
+}
