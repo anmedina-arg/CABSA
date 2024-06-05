@@ -4,7 +4,7 @@ import { Card } from '../cards/cards';
 
 export function SmeService() {
   const width = '45rem';
-  const height = '20rem';
+  const height = '18rem';
 
   return(
     <div className='divContainerSme'>

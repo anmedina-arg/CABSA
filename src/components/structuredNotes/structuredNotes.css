@@ -5,9 +5,10 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  gap: 4rem;
 }
 
 .logo {
-  height: 9rem;
+  height: 6rem;
   width: auto;
 }

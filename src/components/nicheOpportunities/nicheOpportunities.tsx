@@ -5,7 +5,7 @@ import { nicheCards } from '@/utils/CardsValues';
 
 export function NicheOpportunities() {
   const width = '45rem';
-  const height = '20rem';
+  const height = '18rem';
 
   return (
     <div className="divContainerNiche">
