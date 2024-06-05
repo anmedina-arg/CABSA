@@ -4,13 +4,13 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   position: relative;
   padding-top: var(--padingTop);
 }
 
 .heroBackground {
-  height: 100%;
+  height: 100vh;
   position: absolute;
   object-fit: fill;
   z-index: -5;
