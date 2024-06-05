@@ -12,7 +12,7 @@ export function Services() {
     <div id='services' className='divContainerServices'>
       <MainTitle title="our services" />
       <div className="servicesContent">
-        <DropDownMenu title="structured notes" linkButton={true}>
+        <DropDownMenu title="structured notes" linkButton={true} open={true}>
           <StructuredNotes />
         </DropDownMenu>
         <DropDownMenu title="sme u.s. lending found" linkButton={true}>
