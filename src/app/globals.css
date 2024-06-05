@@ -42,3 +42,9 @@ body::-webkit-scrollbar-thumb {
   border-radius: 2rem;
   border: 0.3rem solid var(--lightGray);
 }
+
+p {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: normal;
+}

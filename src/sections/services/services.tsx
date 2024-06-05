@@ -5,6 +5,7 @@ import { StructuredNotes } from '@/components/structuredNotes/structuredNotes';
 import { NicheOpportunities } from '@/components/nicheOpportunities/nicheOpportunities';
 import { SmeService } from '@/components/smeService/smeService';
 import { ClubDeals } from '@/components/clubDeals/clubDeals';
+import { AlternativePlatforms } from '@/components/alternativePlatforms/alternativePlatforms';
 
 export function Services() {
   return (
@@ -17,13 +18,15 @@ export function Services() {
         <DropDownMenu title="sme u.s. lending found" linkButton={true}>
           <SmeService />
         </DropDownMenu>
-        <DropDownMenu title="club deals">
+        <DropDownMenu title="club deals" linkButton={false}>
           <ClubDeals />
         </DropDownMenu>
         <DropDownMenu title="niche opportunities" linkButton={true}>
           <NicheOpportunities />
         </DropDownMenu>
-        <DropDownMenu title="alternative platforms" linkButton={true}>hola</DropDownMenu>
+        <DropDownMenu title="alternative platforms" linkButton={true}>
+          <AlternativePlatforms />
+        </DropDownMenu>
       </div>
     </div>
   );
