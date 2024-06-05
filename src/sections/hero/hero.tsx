@@ -1,35 +1,32 @@
 import Link from 'next/link';
-import SectionLayout from '@/components/sectionLayout/sectionLayout';
 // import VideoBackground from '../../components/videoBackground/videoBackground.tsx';
 import VideoBackground from '@/components/videoBackground/videoBackground';
 import { acuminFont } from '@/utils/fonts';
 import './hero.css';
 export function Hero() {
   return (
-    <SectionLayout id="hero">
-      <>
-        <section id="hero" className="heroSection">
-          <VideoBackground />
-          <div className="heroContainer">
-            <div className="heroTitleContainer">
-              <h1 className="heroTitle">
+    <>
+      <section id="hero" className="heroSection">
+        <VideoBackground />
+        <div className="heroContainer">
+          <div className="heroTitleContainer">
+            <h1 className="heroTitle">
                 We offer <strong>empathetic</strong>,{' '}
-                <strong>personalized</strong> and <strong>impactful</strong>{' '}
+              <strong>personalized</strong> and <strong>impactful</strong>{' '}
                 financial solutions
-              </h1>
-              <h2 className={`heroSubTitle ${acuminFont.variable}`}>
+            </h1>
+            <h2 className={`heroSubTitle ${acuminFont.variable}`}>
                 Beyond financial innovation
-              </h2>
-            </div>
-            <div className="heroButtonContainer">
-              <Link href={'#contact'}>
-                <button className="heroButton">Contact Us</button>
-              </Link>
-            </div>
+            </h2>
           </div>
-        </section>
-        <div className="heroSeparator"></div>
-      </>
-    </SectionLayout>
+          <div className="heroButtonContainer">
+            <Link href={'#contact'}>
+              <button className="heroButton">Contact Us</button>
+            </Link>
+          </div>
+        </div>
+      </section>
+      <div className="heroSeparator"></div>
+    </>
   );
 }
