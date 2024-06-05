@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import VRImage from '../../assets/VRImage.webp';
+import VRImageMobile from '@/assets/VRImageMobile.webp';
 import './about.css';
 import MainTitle from '@/components/mainTitle/mainTitle';
 
@@ -22,6 +23,7 @@ export function About() {
         </div>
         <div className='divImages'>
           <Image src={VRImage} alt='About image' className='imagesAbout' />
+          <Image src={VRImageMobile} alt='About image' className='imagesAboutMobile' />
         </div>
       </div>
     </section>
