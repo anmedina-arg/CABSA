@@ -1,5 +1,4 @@
 import Link from 'next/link';
-// import VideoBackground from '../../components/videoBackground/videoBackground.tsx';
 import VideoBackground from '@/components/videoBackground/videoBackground';
 import { acuminFont } from '@/utils/fonts';
 import './hero.css';

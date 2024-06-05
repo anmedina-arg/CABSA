@@ -3,30 +3,52 @@ import { useEffect, useState } from 'react';
 
 export default function VideoBackground() {
   const videoBackgroundHorizontal = 'videos/VIDEO_WEB_MAIN_HERO.webm';
-  const videoBackgroundHorizontalIos = 'videos/VIDEO_WEB_MAIN_HERO.m4v';
+  const videoBackgroundHorizontalM4v = 'videos/VIDEO_WEB_MAIN_HERO.m4v';
   const videoBackgroundHorizontalMp4 = 'videos/VIDEO_WEB_MAIN_HERO.mp4';
   const videoBackgroundVertical =
     'videos/VIDEO_WEB_MAIN_HERO_MOBILE_VERTICAL.webm';
-  const videoBackgroundVerticalIos =
+  const videoBackgroundVerticalM4v =
     'videos/VIDEO_WEB_MAIN_HERO_MOBILE_VERTICAL.m4v';
   const videoBackgroundVerticalMp4 =
     'videos/VIDEO_WEB_MAIN_HERO_MOBILE_VERTICAL.m4v';
 
-  const [isPortrait, setIsPortrait] = useState(false);
-  const [key, setKey] = useState(0); // Estado adicional para forzar el rerender
-
+  function getInitialOrientation() {
+    return (
+      typeof window !== 'undefined' &&
+      window.screen.orientation.type.startsWith('portrait')
+    );
+  }
+  const [videoWebm, setVideoWebm] = useState('');
+  const [videoM4v, setVideoM4v] = useState('');
+  const [videoMp4, setVideoMp4] = useState('');
+  const [key, setKey] = useState(0);
   const updateOrientation = () => {
-    setIsPortrait(window.innerHeight > window.innerWidth);
-    setKey(prevKey => prevKey + 1); // Actualiza el estado del key para forzar el rerender
+    const isCurrentlyPortrait =
+      window.screen.orientation.type.startsWith('portrait');
+    setVideoWebm(
+      isCurrentlyPortrait ? videoBackgroundVertical : videoBackgroundHorizontal
+    );
+    setVideoM4v(
+      isCurrentlyPortrait
+        ? videoBackgroundVerticalM4v
+        : videoBackgroundHorizontalM4v
+    );
+    setVideoMp4(
+      isCurrentlyPortrait
+        ? videoBackgroundVerticalMp4
+        : videoBackgroundHorizontalMp4
+    );
+    setKey(prevKey => prevKey + 1);
   };
 
   useEffect(() => {
-    window.addEventListener('resize', updateOrientation);
-    window.addEventListener('orientationchange', updateOrientation);
-
+    updateOrientation();
+    window.screen.orientation.addEventListener('change', updateOrientation);
     return () => {
-      window.removeEventListener('resize', updateOrientation);
-      window.removeEventListener('orientationchange', updateOrientation);
+      window.screen.orientation.removeEventListener(
+        'change',
+        updateOrientation
+      );
     };
   }, []);
 
@@ -34,19 +56,9 @@ export default function VideoBackground() {
     <video key={key} autoPlay loop muted playsInline className="heroBackground">
       {
         <>
-          {isPortrait ? (
-            <>
-              <source src={videoBackgroundVertical} type="video/webm" />
-              <source src={videoBackgroundVerticalIos} type="video/mp4" />
-              <source src={videoBackgroundVerticalMp4} type="video/mp4" />
-            </>
-          ) : (
-            <>
-              <source src={videoBackgroundHorizontal} type="video/webm" />
-              <source src={videoBackgroundHorizontalIos} type="video/mp4" />
-              <source src={videoBackgroundHorizontalMp4} type="video/mp4" />
-            </>
-          )}
+          <source src={videoWebm} type="video/webm" />
+          <source src={videoM4v} type="video/m4v" />
+          <source src={videoMp4} type="video/mp4" />
         </>
       }
       Your browser does not support the video tag.
