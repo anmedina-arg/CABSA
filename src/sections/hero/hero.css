@@ -24,6 +24,24 @@
   mask-composite: intersect;
 }
 
+.heroBackground::-webkit-media.controls,
+.heroBackground::-webkit-media.controls-panel,
+.heroBackground::-webkit-media.controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* .hide-media-controls { */
+/*   appearance: none; */
+/*   -webkit-appearance: none; */
+/* } */
+/**/
+/* .hide-media-controls::-webkit-media-controls, */
+/* .hide-media-controls::-webkit-media-controls-panel, */
+/* .hide-media-controls::-webkit-media-controls-play-button { */
+/*   display: none !important; */
+/* } */
+
 .heroContainer {
   display: flex;
   flex-direction: column;
