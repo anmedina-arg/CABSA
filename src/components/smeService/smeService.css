@@ -11,3 +11,12 @@
   font-size: 4rem;
   font-weight: 400;
 }
+
+@media (width <= 768px) {
+  .h3Styles {
+    font-size: 1.6rem;
+  }
+}
+
+@media (width > 768px) and (width <= 991px) {
+}
