@@ -1,5 +1,6 @@
 .sectionAbout {
-  padding: var(--padingTop) 8rem 2.5rem 8rem;
+  padding: var(--paddingTop) var(--paddingLandR) var(--paddingBottom)
+    var(--paddingLandR);
   display: flex;
   justify-content: center;
 }
@@ -44,10 +45,6 @@
 }
 
 @media (width <= 768px) {
-  .sectionAbout {
-    padding: 8rem 2rem 0 2rem;
-  }
-
   .divContainer {
     display: flex;
     flex-direction: column;
@@ -78,10 +75,6 @@
 }
 
 @media (width > 768px) and (width <= 991px) {
-  .sectionAbout {
-    padding: 8rem 4rem 0 4rem;
-  }
-
   .divContainer {
     display: flex;
     flex-direction: column;

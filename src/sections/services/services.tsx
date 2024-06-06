@@ -9,7 +9,7 @@ import { AlternativePlatforms } from '@/components/alternativePlatforms/alternat
 
 export function Services() {
   return (
-    <div id='services' className='divContainerServices'>
+    <section id='services' className='divContainerServices'>
       <MainTitle title="our services" />
       <div className="servicesContent">
         <DropDownMenu title="structured notes" linkButton={true} open={true}>
@@ -28,7 +28,7 @@ export function Services() {
           <AlternativePlatforms />
         </DropDownMenu>
       </div>
-    </div>
+    </section>
   );
 }
 

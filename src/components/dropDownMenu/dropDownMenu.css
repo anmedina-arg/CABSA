@@ -1,22 +1,43 @@
-/* .dropDownContainer {
-  cursor: pointer;
-} */
-
 .headerDropDown {
   display: flex;
   align-items: center;
+  width: 100%;
+}
+
+.divTitleArrow {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 95%;
+  height: fit-content;
+  cursor: pointer;
 }
 
 .spanTitles {
-  --font-size: 4.5rem;
+  font-size: 4.5rem;
   text-transform: uppercase;
   color: var(--white);
   margin-left: 4rem;
-  font-size: var(--font-size);
   z-index: 2;
   line-height: 1;
-  cursor: pointer;
   overflow-y: hidden;
+}
+
+.arrow {
+  color: white;
+  width: 3rem;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.arrowR {
+  transition: 0.5s;
+  rotate: -90deg;
+}
+
+.arrowD {
+  transition: 0.5s;
 }
 
 .hiddenMenu {
@@ -74,16 +95,57 @@
   }
 }
 
-@media (max-width: 768px) {
-  .modalIn {
-    margin: -0.4rem 0 0 0.35rem;
-  }
-}
-
 .iconDD {
   width: 3rem;
   height: 3rem;
   background: linear-gradient(-45deg, #fff 15%, #000 90%);
   border-radius: 50%;
   z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .divTitleArrow {
+    min-width: 95%;
+    max-width: 100%;
+  }
+
+  .spanTitles {
+    font-size: 2.2rem;
+    margin-left: 2rem;
+  }
+
+  .arrow {
+    width: 1.8rem;
+  }
+
+  .showMenu {
+    --font-size: 2.2rem;
+    top: calc(var(--font-size) / -2);
+    border-left: 1px solid white;
+    margin-left: 1rem;
+    padding: 6rem 0 0 2rem;
+  }
+
+  .buttonLink {
+    width: 100%;
+  }
+
+  .iconDD {
+    height: 2rem;
+    width: 2rem;
+  }
+}
+
+@media (width > 768px) and (width <= 991px) {
+  .divTitleArrow {
+    min-width: 95%;
+    max-width: 100%;
+  }
+}
+
+@media (width > 992px) and (width <= 1350px) {
+  .divTitleArrow {
+    min-width: 95%;
+    max-width: 100%;
+  }
 }

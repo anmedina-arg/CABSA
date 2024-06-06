@@ -1,11 +1,17 @@
 .divContainerServices {
-  padding: 10rem 8rem 5rem 8rem;
+  padding: var(--paddingTop) var(--paddingLandR) var(--paddingBottom)
+    var(--paddingLandR);
 }
 
 .servicesContent {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  /* height: 100%; */
+  gap: 5rem;
   position: relative;
+}
+
+@media (width <= 768px) {
+}
+
+@media (width > 768px) and (width <= 991px) {
 }

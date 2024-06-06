@@ -2,6 +2,8 @@
 import { ReactElement, useState } from 'react';
 import './dropDownMenu.css';
 import Link from 'next/link';
+import { SlArrowRight } from 'react-icons/sl';
+import { SlArrowDown } from 'react-icons/sl';
 
 type DropDownMenuProps = {
 	children: any,
@@ -21,7 +23,12 @@ function DropDownMenu({ children, title, open = false, linkButton }: DropDownMen
     <div className='dropDownContainer'>
       <div className='headerDropDown'>
         <IconDD/>
-        <span className='spanTitles' onClick={handleDropDown}>{title}</span>
+        <div className='divTitleArrow' onClick={handleDropDown}>
+          <span className='spanTitles' >
+            {title}
+          </span>
+          <SlArrowDown className={`arrow ${ isOpen ? 'arrowD' : 'arrowR'}`}/>
+        </div>
       </div>
       <div className={isOpen ? 'showMenu' : 'hiddenMenu' }>
         {children}
