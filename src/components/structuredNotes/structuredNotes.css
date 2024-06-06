@@ -12,3 +12,12 @@
   height: 6rem;
   width: auto;
 }
+
+@media (width <= 768px) {
+  .logo {
+    height: 4rem;
+  }
+}
+
+@media (width > 768px) and (width <= 991px) {
+}

@@ -5,11 +5,12 @@ type AnchorProps = {
   label: string;
   to: string;
   setShow?: any;
+  className?: string
 };
 
-function Anchor({ label, to }: AnchorProps) {
+function Anchor({ label, to, className }: AnchorProps) {
   return (
-    <Link href={to} className="anchor link">
+    <Link href={to} className={`anchor link ${className}`}>
       {label}
     </Link>
   );

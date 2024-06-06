@@ -54,6 +54,7 @@
   .aboutText {
     width: 97.8%;
     line-height: 190%;
+    text-align: end;
   }
 
   .divImages {

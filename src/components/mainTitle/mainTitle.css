@@ -11,7 +11,11 @@
 
 @media (width <= 768px) {
   .mainTitle {
-    font-size: 4.5rem;
+    font-size: 3rem;
     margin-bottom: 4rem;
+  }
+
+  .pink {
+    text-align: end;
   }
 }

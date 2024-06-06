@@ -3,24 +3,24 @@ import BurguerIcon from '../icons/burguer-icon';
 import CloseIcon from '../icons/close-icon';
 import './navbar.css';
 import { useState } from 'react';
-import { itemsNavbar, itemsNavbarProps } from './navbar';
+import { itemsNavbarProps } from './navbar';
 
 type NavBarMobileProps = {
-	itemsNavbar: itemsNavbarProps[]
+  itemsNavbar: itemsNavbarProps[]
 };
 
-function NavBarMobile({ itemsNavbar }:NavBarMobileProps) {
+function NavBarMobile({ itemsNavbar }: NavBarMobileProps) {
   const [show, setShow] = useState(false);
 
   function toogleMenu() {
     setShow(!show);
   }
   return (
-    <div onClick={()=>setShow(!show)}>
+    <div onClick={() => setShow(!show)}>
       <div onClick={toogleMenu}>
         {show ? <CloseIcon /> : <BurguerIcon />}
       </div>
-      {show && 
+      {show &&
         <div className="itemsBurguerMenu">
           {
             itemsNavbar.map(({ title, path }) => <Anchor key={title} to={path} label={title} setShow={setShow} />)

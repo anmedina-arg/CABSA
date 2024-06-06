@@ -4,7 +4,8 @@ import './navbar.css';
 import Anchor from '../anchor/anchor';
 import CABSAMainLogo from '../CABSAMainLogo/cabsaMainLogo';
 import NavBarMobile from './navbar-mobile';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useScrollSpy } from '@/hooks/useScrolSpy';
 
 type NavbarProps = {
   items: itemsNavbarProps[],
@@ -12,25 +13,36 @@ type NavbarProps = {
 
 export function Navbar({ items }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const activeSection = useScrollSpy(items);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  return(
+  return (
     <nav className='navbarContainer'>
-      <CABSAMainLogo />
+      <div className="logoWeb">
+        <CABSAMainLogo />
+      </div>
+      <div className='logoMobolie'>
+        <CABSAMainLogo little />
+      </div>
       <button className="navbarToggle" onClick={toggleMenu}>
-        <NavBarMobile itemsNavbar={items}/>
+        <NavBarMobile itemsNavbar={items} />
       </button>
       <div className='itemsNavbarContainer'>
-        {items?.map(({ title, path }:itemsNavbarProps) => <Anchor key={title} label={title} to={path}/>)}
+        {items?.map(({ title, path }: itemsNavbarProps) => (
+          <Anchor
+            key={title}
+            label={title}
+            to={path}
+            className={activeSection === path.substring(1) ? 'active' : ''}
+          />
+        ))}
       </div>
     </nav>
   );
 }
-
-
 
 export type itemsNavbarProps = {
   title: string,

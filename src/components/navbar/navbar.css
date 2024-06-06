@@ -16,10 +16,15 @@
   gap: 1rem;
 }
 
-.image {
+.logoMobolie {
+  display: none;
+  visibility: hidden;
+}
+
+/* .image {
   height: 6rem;
   width: auto;
-}
+} */
 
 .navbarToggle {
   display: none;
@@ -30,6 +35,17 @@
     position: fixed;
     padding: 1rem 2rem;
   }
+
+  .logoWeb {
+    display: none;
+    visibility: hidden;
+  }
+
+  .logoMobolie {
+    display: block;
+    visibility: visible;
+  }
+
   .itemsNavbarContainer {
     display: none;
   }

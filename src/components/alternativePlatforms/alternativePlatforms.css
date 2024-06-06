@@ -1,6 +1,13 @@
 .textStyles {
-  max-width: 52%;
+  max-width: 56%;
   line-height: 190%;
   text-align: center;
   margin: 4rem 0;
+}
+
+@media (width <= 768px) {
+  .textStyles {
+    max-width: 100%;
+    margin: 0 0 4rem 0;
+  }
 }
