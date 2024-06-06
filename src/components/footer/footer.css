@@ -51,3 +51,9 @@ footer {
   color: var(--skyBlue);
   transform: scale(0.95);
 }
+
+@media (max-width: 768px) {
+  .socials {
+    margin: 0;
+  }
+}

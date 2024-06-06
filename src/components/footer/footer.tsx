@@ -13,20 +13,20 @@ type FooterProps = {
 }
 
 export function Footer({ footerItems }: FooterProps) {
-  
-  return(
+
+  return (
     <footer>
       <div className="footerLeft">
-        <CABSAMainLogo/>
+        <CABSAMainLogo vertical />
         <div className="socials">
           <Link href={NEXT_PUBLIC_FACEBOOK} target='_blank'>
-            <Image src={ facebookIcon } alt='facebook icon'/>
+            <Image src={facebookIcon} alt='facebook icon' />
           </Link>
           <Link href={NEXT_PUBLIC_INSTAGRAM} target='_blank'>
-            <Image src={ instagramIcon } alt='instagram icon'/>
+            <Image src={instagramIcon} alt='instagram icon' />
           </Link>
           <Link href={NEXT_PUBLIC_LINKEDIN} target='_blank'>
-            <Image src={ linkedinIcon } alt='linkedin icon'/>
+            <Image src={linkedinIcon} alt='linkedin icon' />
           </Link>
         </div>
       </div>

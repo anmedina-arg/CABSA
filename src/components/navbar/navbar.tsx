@@ -21,7 +21,12 @@ export function Navbar({ items }: NavbarProps) {
 
   return (
     <nav className='navbarContainer'>
-      <CABSAMainLogo />
+      <div className="logoWeb">
+        <CABSAMainLogo />
+      </div>
+      <div className='logoMobolie'>
+        <CABSAMainLogo little />
+      </div>
       <button className="navbarToggle" onClick={toggleMenu}>
         <NavBarMobile itemsNavbar={items} />
       </button>
