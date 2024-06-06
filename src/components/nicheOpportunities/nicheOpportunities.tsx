@@ -1,14 +1,29 @@
+'use client';
 import Image from 'next/image';
 import { Card } from '../cards/cards';
 import './nicheOpportunities.css';
 import { nicheCards } from '@/utils/CardsValues';
+import { useEffect, useState } from 'react';
+import { orientation } from '@/utils/setOrientation';
 
 export function NicheOpportunities() {
-  const width = '45rem';
-  const height = '18rem';
+  const [width, setWidth] = useState('');
+  const [height, setHeight] = useState('');
+  const [key, setKey] = useState(0);
+
+  useEffect(() => {
+    orientation(setWidth, setHeight, setKey, '15rem', '45rem', '10rem', '18rem');
+    window.screen.orientation.addEventListener('change', () => orientation(setWidth, setHeight, setKey, '15rem', '34rem', '10rem', '18rem'));
+    return () => {
+      window.screen.orientation.removeEventListener(
+        'change',
+        () => orientation(setWidth, setHeight, setKey, '15rem', '45rem', '10rem', '18rem')
+      );
+    };
+  }, []);
 
   return (
-    <div className="divContainerNiche">
+    <div className="divContainerNiche" key={key}>
       {nicheCards.map((card, key) => {
         return (
           <Card

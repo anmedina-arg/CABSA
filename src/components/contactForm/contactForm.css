@@ -1,7 +1,6 @@
 .formStyles {
   grid-row: 2/4;
   grid-column: 2/3;
-  margin-left: 10%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -130,7 +129,7 @@ input:-webkit-autofill:focus {
   background-color: var(--candyPink);
   border: none;
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 150%;
   display: flex;
   align-items: center;
@@ -139,6 +138,7 @@ input:-webkit-autofill:focus {
 
 .btnStyles:hover {
   cursor: pointer;
+  font-size: 2.1rem;
 }
 
 .messageSent {
@@ -186,4 +186,12 @@ input:-webkit-autofill:focus {
 
 .errorDiv {
   height: 4rem;
+}
+
+@media (width <= 768px) {
+  .formStyles {
+    grid-row: 4/5;
+    grid-column: 1/3;
+    margin-right: 0;
+  }
 }

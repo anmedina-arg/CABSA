@@ -96,3 +96,18 @@
   margin-top: none;
   margin-bottom: 1.5rem;
 }
+
+@media (width <= 768px) {
+  .divContainerCard {
+    padding: 1rem 2rem;
+  }
+
+  .titleStyles {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0;
+  }
+}
+
+@media (width > 768px) and (width <= 991px) {
+}

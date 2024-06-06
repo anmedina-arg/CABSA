@@ -7,6 +7,7 @@ import {
 import './contactForm.css';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Link from 'next/link';
 
 export function ContactForm() {
   const [click, setClick] = useState(false);
