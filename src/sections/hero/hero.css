@@ -11,6 +11,7 @@
 
 .heroBackground {
   height: 100vh;
+  width: 100vw;
   position: absolute;
   object-fit: fill;
   z-index: -5;
