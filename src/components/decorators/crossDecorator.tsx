@@ -1,3 +1,4 @@
+import React from 'react';
 import './crossDecorator.css';
 
 const CrossDecorator = () => {
