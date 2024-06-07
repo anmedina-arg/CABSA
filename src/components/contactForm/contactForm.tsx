@@ -73,11 +73,11 @@ export function ContactForm() {
     ) {
       emailjs
         .sendForm(
-          'service_wwflbyf',
-          'template_4byuwug',
+          'service_ywjvmvr',
+          'template_8je5bm8',
           refForm.current || '',
           {
-            publicKey: 'ThLmphPvc0-dp6Vwt',
+            publicKey: 'kkBUXQhrzC2BLnukN',
           }
         )
         .then((result: any) => {

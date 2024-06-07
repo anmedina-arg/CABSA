@@ -84,24 +84,24 @@ export const structuredNotesCards: Card[] = [
 ];
 
 export const smeCards: Card[] = [
-  {
-    title: 'ESTIMATED RETURN',
-    flexDirection: 'column',
-    turnCard: false,
-    subtitle: '10%'
-  },
+  // {
+  //   title: 'ESTIMATED RETURN',
+  //   flexDirection: 'column',
+  //   turnCard: false,
+  //   subtitle: '10%'
+  // },
   {
     title: 'TOTAL FINANCING',
     flexDirection: 'column',
     turnCard: false,
     subtitle: '5B'
   },
-  {
-    title: 'LIQUIDITY IN',
-    flexDirection: 'column-reverse',
-    turnCard: false,
-    subtitle: '90 DAYS'
-  },
+  // {
+  //   title: 'LIQUIDITY IN',
+  //   flexDirection: 'column-reverse',
+  //   turnCard: false,
+  //   subtitle: '90 DAYS'
+  // },
   {
     title: 'ASSET BACKED',
     flexDirection: 'column-reverse',
