@@ -1,5 +1,4 @@
 .divContainerCard {
-  cursor: pointer;
   background-color: var(--deepTeal);
   display: flex;
   align-items: center;
@@ -9,9 +8,9 @@
   color: var(--candyPink);
 }
 
-.divContainerCard:hover {
+/* .divContainerCard:hover {
   background-color: var(--white);
-}
+} */
 
 .divContainerIcon {
   display: flex;
@@ -83,9 +82,9 @@
   text-align: center;
 }
 
-.divContainerCard:hover .titleStyles {
+/* .divContainerCard:hover .titleStyles {
   color: var(--deepTeal);
-}
+} */
 
 .normal {
   margin-top: 1.5rem;
@@ -102,13 +101,13 @@
     padding: 1rem 2rem;
   }
 
-  .divContainerCard:hover {
+  /* .divContainerCard:hover {
     background-color: var(--deepTeal);
   }
 
   .divContainerCard:hover .titleStyles {
     color: var(--white);
-  }
+  } */
 
   .titleStyles {
     font-size: 1.5rem;
