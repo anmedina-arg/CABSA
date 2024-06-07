@@ -15,7 +15,7 @@ export function Services() {
         <DropDownMenu title="structured notes" linkButton={true} open={true}>
           <StructuredNotes />
         </DropDownMenu>
-        <DropDownMenu title="sme u.s. lending found" linkButton={true}>
+        <DropDownMenu title="sme u.s. lending fund" linkButton={true}>
           <SmeService />
         </DropDownMenu>
         <DropDownMenu title="club deals" linkButton={false}>
