@@ -1,12 +1,11 @@
 import './footer.css';
-import facebookIcon from '../../assets/icons/facebook.png';
-import instagramIcon from '../../assets/icons/instagram.png';
-import linkedinIcon from '../../assets/icons/linkedin.png';
-import mainLogo from '../../assets/main-logo.png';
 import Image from 'next/image';
 import { NEXT_PUBLIC_FACEBOOK, NEXT_PUBLIC_INSTAGRAM, NEXT_PUBLIC_LINKEDIN } from '@/utils/config';
 import Link from 'next/link';
 import CABSAMainLogo from '../CABSAMainLogo/cabsaMainLogo';
+import { BsFacebook } from 'react-icons/bs';
+import { BsInstagram } from 'react-icons/bs';
+import { BsLinkedin } from 'react-icons/bs';
 
 type FooterProps = {
   footerItems: FooterLinkProps[]
@@ -19,14 +18,14 @@ export function Footer({ footerItems }: FooterProps) {
       <div className="footerLeft">
         <CABSAMainLogo vertical />
         <div className="socials">
-          <Link href={NEXT_PUBLIC_FACEBOOK} target='_blank'>
-            <Image src={facebookIcon} alt='facebook icon' />
+          {/* <Link href={NEXT_PUBLIC_FACEBOOK} target='_blank'>
+            <BsFacebook className='logoRedes'/>
           </Link>
           <Link href={NEXT_PUBLIC_INSTAGRAM} target='_blank'>
-            <Image src={instagramIcon} alt='instagram icon' />
-          </Link>
-          <Link href={NEXT_PUBLIC_LINKEDIN} target='_blank'>
-            <Image src={linkedinIcon} alt='linkedin icon' />
+            <BsInstagram className='logoRedes'/>
+          </Link> */}
+          <Link href='https://www.linkedin.com/company/cabsa-intl/' target='_blank'>
+            <BsLinkedin className='logoRedes'/>
           </Link>
         </div>
       </div>

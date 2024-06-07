@@ -13,6 +13,10 @@
 }
 
 @media (width <= 768px) {
+  .divContainerNiche {
+    gap: 2rem;
+  }
+
   .logo {
     height: 4rem;
   }

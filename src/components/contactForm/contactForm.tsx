@@ -1,13 +1,13 @@
 'use client';
-import {
-  NEXT_PUBLIC_APIKEY_EMAILJS,
-  NEXT_PUBLIC_SERVICE_ID_EMAILJS,
-  NEXT_PUBLIC_TEMPLATE_ID_EMAILJS,
-} from '@/utils/config';
+// import {
+//   NEXT_PUBLIC_APIKEY_EMAILJS,
+//   NEXT_PUBLIC_SERVICE_ID_EMAILJS,
+//   NEXT_PUBLIC_TEMPLATE_ID_EMAILJS,
+// } from '@/utils/config';
 import './contactForm.css';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 export function ContactForm() {
   const [click, setClick] = useState(false);
@@ -73,11 +73,11 @@ export function ContactForm() {
     ) {
       emailjs
         .sendForm(
-          NEXT_PUBLIC_SERVICE_ID_EMAILJS,
-          NEXT_PUBLIC_TEMPLATE_ID_EMAILJS,
+          'service_wwflbyf',
+          'template_4byuwug',
           refForm.current || '',
           {
-            publicKey: NEXT_PUBLIC_APIKEY_EMAILJS,
+            publicKey: 'ThLmphPvc0-dp6Vwt',
           }
         )
         .then((result: any) => {

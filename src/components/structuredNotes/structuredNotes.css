@@ -14,6 +14,10 @@
 }
 
 @media (width <= 768px) {
+  .divContainerCards {
+    gap: 2rem;
+  }
+
   .logo {
     height: 4rem;
   }
