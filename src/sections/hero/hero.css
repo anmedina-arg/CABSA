@@ -6,7 +6,7 @@
   height: 100vh;
   width: 100vw;
   position: relative;
-  padding-top: var(--padingTop);
+  padding-top: var(--paddingTop);
 }
 
 .heroBackground {

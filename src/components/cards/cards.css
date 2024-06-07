@@ -110,4 +110,17 @@
 }
 
 @media (width > 768px) and (width <= 991px) {
+  .titleStyles {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0;
+  }
+}
+
+@media (width > 991px) and (width <= 1300px) {
+  .titleStyles {
+    font-size: 1.9rem;
+    font-weight: 300;
+    letter-spacing: 0;
+  }
 }

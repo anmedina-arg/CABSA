@@ -12,7 +12,6 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, auto);
   column-gap: 8rem;
-  padding-top: 8rem;
 }
 
 .contactTitle {

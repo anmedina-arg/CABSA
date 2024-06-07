@@ -138,14 +138,6 @@
 
 @media (width > 768px) and (width <= 991px) {
   .divTitleArrow {
-    min-width: 95%;
-    max-width: 100%;
-  }
-}
-
-@media (width > 992px) and (width <= 1350px) {
-  .divTitleArrow {
-    min-width: 95%;
-    max-width: 100%;
+    gap: 4rem;
   }
 }

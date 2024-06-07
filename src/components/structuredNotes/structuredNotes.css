@@ -20,4 +20,7 @@
 }
 
 @media (width > 768px) and (width <= 991px) {
+  .logo {
+    height: 4rem;
+  }
 }

@@ -11,12 +11,12 @@ export function SmeService() {
   const [key, setKey] = useState(0);
 
   useEffect(() => {
-    orientation(setWidth, setHeight, setKey, '15rem', '45rem', '10rem', '18rem');
-    window.screen.orientation.addEventListener('change', () => orientation(setWidth, setHeight, setKey, '15rem', '34rem', '10rem', '18rem'));
+    orientation(setWidth, setHeight, setKey, '15rem', '45rem', '32rem', '10rem', '18rem');
+    window.screen.orientation.addEventListener('change', () => orientation(setWidth, setHeight, setKey, '15rem', '34rem', '32rem', '10rem', '18rem'));
     return () => {
       window.screen.orientation.removeEventListener(
         'change',
-        () => orientation(setWidth, setHeight, setKey, '15rem', '45rem', '10rem', '18rem')
+        () => orientation(setWidth, setHeight, setKey, '15rem', '45rem', '32rem', '10rem', '18rem')
       );
     };
   }, []);
