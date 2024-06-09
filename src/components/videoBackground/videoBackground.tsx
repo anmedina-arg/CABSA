@@ -1,6 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
 
+type VideoSrc = {
+  src: string;
+  type: 'video/webm' | 'video/m4v' | 'video/mp4';
+};
+
 export default function VideoBackground() {
   const videoBackgroundHorizontal = 'videos/VIDEO_WEB_MAIN_HERO.webm';
   const videoBackgroundHorizontalM4v = 'videos/VIDEO_WEB_MAIN_HERO.m4v';
@@ -10,37 +15,73 @@ export default function VideoBackground() {
   const videoBackgroundVerticalM4v =
     'videos/VIDEO_WEB_MAIN_HERO_MOBILE_VERTICAL.m4v';
   const videoBackgroundVerticalMp4 =
-    'videos/VIDEO_WEB_MAIN_HERO_MOBILE_VERTICAL.m4v';
+    'videos/VIDEO_WEB_MAIN_HERO_MOBILE_VERTICAL.mp4';
 
-  function getInitialOrientation() {
-    return (
-      typeof window !== 'undefined' &&
-      window.screen.orientation.type.startsWith('portrait')
-    );
-  }
-  const [videoWebm, setVideoWebm] = useState('');
-  const [videoM4v, setVideoM4v] = useState('');
-  const [videoMp4, setVideoMp4] = useState('');
-  const [key, setKey] = useState(0);
+  const [videoSrcs, setVideosSrcs] = useState<VideoSrc[]>([
+    {
+      src: '',
+      type: 'video/webm',
+    },
+    {
+      src: '',
+      type: 'video/m4v',
+    },
+    {
+      src: '',
+      type: 'video/mp4',
+    },
+  ]);
+  const [key, setKey] = useState<{ id: number; portrait: null | boolean }>({
+    id: 0,
+    portrait: null,
+  });
 
   function updateOrientation() {
     const isCurrentlyPortrait =
-      window?.screen?.orientation?.type?.startsWith('portrait') ||
+      window.screen.orientation?.type.startsWith('portrait') ||
       window.innerHeight > window.innerWidth;
-    setVideoWebm(
-      isCurrentlyPortrait ? videoBackgroundVertical : videoBackgroundHorizontal
-    );
-    setVideoM4v(
+
+    setVideosSrcs(
       isCurrentlyPortrait
-        ? videoBackgroundVerticalM4v
-        : videoBackgroundHorizontalM4v
+        ? [
+          {
+            src: videoBackgroundVertical,
+            type: 'video/webm',
+          },
+          {
+            src: videoBackgroundVerticalM4v,
+            type: 'video/m4v',
+          },
+          {
+            src: videoBackgroundVerticalMp4,
+            type: 'video/mp4',
+          },
+        ]
+        : [
+          {
+            src: videoBackgroundHorizontal,
+            type: 'video/webm',
+          },
+          {
+            src: videoBackgroundHorizontalM4v,
+            type: 'video/m4v',
+          },
+          {
+            src: videoBackgroundHorizontalMp4,
+            type: 'video/mp4',
+          },
+        ]
     );
-    setVideoMp4(
-      isCurrentlyPortrait
-        ? videoBackgroundVerticalMp4
-        : videoBackgroundHorizontalMp4
-    );
-    setKey(prevKey => prevKey + 1);
+
+    setKey(prevKey => {
+      if (prevKey.portrait === isCurrentlyPortrait) {
+        return prevKey;
+      }
+      return {
+        portrait: isCurrentlyPortrait,
+        id: prevKey.id + 1,
+      };
+    });
   }
 
   useEffect(() => {
@@ -61,14 +102,17 @@ export default function VideoBackground() {
   }, []);
 
   return (
-    <video key={key} autoPlay loop muted playsInline className="heroBackground">
-      {
-        <>
-          <source src={videoWebm} type="video/webm" />
-          <source src={videoM4v} type="video/m4v" />
-          <source src={videoMp4} type="video/mp4" />
-        </>
-      }
+    <video
+      key={key.id}
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="heroBackground"
+    >
+      {videoSrcs.map(video => (
+        <source src={video.src} type={video.type} />
+      ))}
       Your browser does not support the video tag.
     </video>
   );
