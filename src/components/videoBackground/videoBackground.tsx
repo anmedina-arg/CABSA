@@ -22,9 +22,11 @@ export default function VideoBackground() {
   const [videoM4v, setVideoM4v] = useState('');
   const [videoMp4, setVideoMp4] = useState('');
   const [key, setKey] = useState(0);
-  const updateOrientation = () => {
+
+  function updateOrientation() {
     const isCurrentlyPortrait =
-      window.screen.orientation.type.startsWith('portrait');
+      window?.screen?.orientation?.type?.startsWith('portrait') ||
+      window.innerHeight > window.innerWidth;
     setVideoWebm(
       isCurrentlyPortrait ? videoBackgroundVertical : videoBackgroundHorizontal
     );
@@ -39,16 +41,22 @@ export default function VideoBackground() {
         : videoBackgroundHorizontalMp4
     );
     setKey(prevKey => prevKey + 1);
-  };
+  }
 
   useEffect(() => {
     updateOrientation();
-    window.screen.orientation.addEventListener('change', updateOrientation);
+    if ('orientation' in screen) {
+      window.screen.orientation.addEventListener('change', updateOrientation);
+      return () => {
+        window.screen.orientation.removeEventListener(
+          'change',
+          updateOrientation
+        );
+      };
+    }
+    window.addEventListener('resize', updateOrientation);
     return () => {
-      window.screen.orientation.removeEventListener(
-        'change',
-        updateOrientation
-      );
+      window.removeEventListener('resize', updateOrientation);
     };
   }, []);
 

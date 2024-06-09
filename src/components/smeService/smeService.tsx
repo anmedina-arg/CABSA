@@ -11,34 +11,88 @@ export function SmeService() {
   const [key, setKey] = useState(0);
 
   useEffect(() => {
-    orientation(setWidth, setHeight, setKey, '15rem', '45rem', '32rem', '10rem', '18rem');
-    window.screen.orientation.addEventListener('change', () => orientation(setWidth, setHeight, setKey, '15rem', '34rem', '32rem', '10rem', '18rem'));
+    orientation(
+      setWidth,
+      setHeight,
+      setKey,
+      '15rem',
+      '45rem',
+      '32rem',
+      '10rem',
+      '18rem'
+    );
+    if ('orientation' in screen) {
+      window.screen.orientation.addEventListener('change', () =>
+        orientation(
+          setWidth,
+          setHeight,
+          setKey,
+          '15rem',
+          '34rem',
+          '32rem',
+          '10rem',
+          '18rem'
+        )
+      );
+      return () => {
+        window.screen.orientation.removeEventListener('change', () =>
+          orientation(
+            setWidth,
+            setHeight,
+            setKey,
+            '15rem',
+            '45rem',
+            '32rem',
+            '10rem',
+            '18rem'
+          )
+        );
+      };
+    }
+    window.addEventListener('resize', () =>
+      orientation(
+        setWidth,
+        setHeight,
+        setKey,
+        '15rem',
+        '45rem',
+        '32rem',
+        '10rem',
+        '18rem'
+      )
+    );
     return () => {
-      window.screen.orientation.removeEventListener(
-        'change',
-        () => orientation(setWidth, setHeight, setKey, '15rem', '45rem', '32rem', '10rem', '18rem')
+      window.removeEventListener('resize', () =>
+        orientation(
+          setWidth,
+          setHeight,
+          setKey,
+          '15rem',
+          '45rem',
+          '32rem',
+          '10rem',
+          '18rem'
+        )
       );
     };
   }, []);
 
-  return(
-    <div className='divContainerSme' key={key}>
-      {
-        smeCards.map((card, key) => {
-          return(
-            <Card
-              key={key}
-              title={card.title}
-              width={width}
-              height={height}
-              flexDirection={card.flexDirection}
-              turnCard={card.turnCard}
-            >
-              <h3 className='h3Styles'>{card.subtitle}</h3>
-            </Card>
-          );
-        })
-      }
+  return (
+    <div className="divContainerSme" key={key}>
+      {smeCards.map((card, key) => {
+        return (
+          <Card
+            key={key}
+            title={card.title}
+            width={width}
+            height={height}
+            flexDirection={card.flexDirection}
+            turnCard={card.turnCard}
+          >
+            <h3 className="h3Styles">{card.subtitle}</h3>
+          </Card>
+        );
+      })}
     </div>
   );
 }
