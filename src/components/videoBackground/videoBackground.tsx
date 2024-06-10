@@ -110,8 +110,8 @@ export default function VideoBackground() {
       playsInline
       className="heroBackground"
     >
-      {videoSrcs.map(video => (
-        <source src={video.src} type={video.type} />
+      {videoSrcs.map((video, i) => (
+        <source key={i} src={video.src} type={video.type} />
       ))}
       Your browser does not support the video tag.
     </video>
