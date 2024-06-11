@@ -3,13 +3,17 @@
   text-align: center;
   align-content: center;
   background-color: var(--deepNavy);
-  padding: 1rem 2rem;
+  padding: 1rem 1.2rem;
   border-radius: 1rem;
   display: inline-block;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition:
     background-color 0.1s linear,
     transform 0.1s linear;
+}
+
+.atTop .anchor {
+  background-color: transparent;
 }
 
 .link {
@@ -27,4 +31,10 @@
   transform: scale(0.95);
   background-color: var(--skyBlue);
   cursor: pointer;
+}
+
+@media (width <= 768px) {
+  .anchor {
+    font-size: 2rem;
+  }
 }

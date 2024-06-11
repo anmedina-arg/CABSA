@@ -14,7 +14,12 @@ function NavBarMobile({ itemsNavbar }: NavBarMobileProps) {
 
   function toogleMenu() {
     setShow(!show);
-  }
+
+    const body = document.body;
+    if (!show) body.classList.remove('atTop');
+    else body.classList.add('atTop');
+  };
+
   return (
     <div onClick={() => setShow(!show)}>
       <div onClick={toogleMenu}>

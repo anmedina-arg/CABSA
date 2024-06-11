@@ -8,8 +8,10 @@ type NavbarItem = {
 export const useScrollSpy = (items: NavbarItem[]) => {
   const [activeSection, setActiveSection] = useState('');
 
-  useEffect(() => {
+  useEffect(() => { 
+
     const handleScroll = () => {
+
       const sections = items.map(item => document.querySelector(item.path));
       let currentSection = '';
 
@@ -21,6 +23,11 @@ export const useScrollSpy = (items: NavbarItem[]) => {
           }
         }
       });
+
+      const body = document.body;
+
+      if (window.pageYOffset === 0) body.classList.add('atTop');
+      else body.classList.remove('atTop');
 
       setActiveSection(currentSection);
     };
