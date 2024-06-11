@@ -1,6 +1,13 @@
 .imageHor {
+  height: 4.5rem;
+  width: auto;
+  transition: ease-out 0.3s;
+}
+
+.atTop .imageHor {
   height: 5rem;
   width: auto;
+  transition: ease-out 0.3s;
 }
 
 .image {
