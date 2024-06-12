@@ -58,9 +58,11 @@ footer {
     color 0.1s linear;
 }
 
-.footerItem:hover {
-  color: var(--skyBlue);
-  transform: scale(0.95);
+@media (hover: hover) {
+  .footerItem:hover {
+    color: var(--skyBlue);
+    transform: scale(0.95);
+  }
 }
 
 .logoRedes {

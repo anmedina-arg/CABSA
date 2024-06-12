@@ -90,9 +90,11 @@
   transition: 400ms ease;
 }
 
-.heroButton:hover {
-  cursor: pointer;
-  color: var(--lightGray);
+@media (hover: hover) {
+  .heroButton:hover {
+    cursor: pointer;
+    color: var(--lightGray);
+  }
 }
 
 @media screen and (max-width: 922px) {
