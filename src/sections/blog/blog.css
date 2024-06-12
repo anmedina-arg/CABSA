@@ -1,0 +1,117 @@
+.blogSection {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  width: 100%;
+  margin: 10rem auto;
+  padding: var(--paddingTop) var(--paddingLandR);
+  position: relative;
+}
+
+.blogTitle {
+  color: var(--snowWhite);
+  font-size: 3rem;
+}
+
+.blogCarrousel {
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  width: 100%;
+  height: 50rem;
+  align-self: center;
+  gap: 2rem;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+}
+
+.blogCarrousel::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .blogCarrousel {
+    grid-auto-columns: calc(100% / 2 - 1rem);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .blogCarrousel {
+    grid-auto-columns: calc(100% / 3 - 2rem);
+  }
+}
+
+.blogCarrousel .arrow {
+  height: 5rem;
+  width: 5rem;
+  text-align: center;
+  line-height: 5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--deepTeal);
+  background: var(--snowWhite);
+  position: absolute;
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 10;
+}
+
+.blogCarrousel .arrow:first-child {
+  left: 1rem;
+}
+
+.blogCarrousel .arrow:last-child {
+  right: 1rem;
+}
+
+.blogCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 40rem;
+  background: var(--deepTeal);
+  border-bottom-right-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  transition: transform 100ms ease-in-out;
+  scroll-snap-align: center;
+}
+
+.blogCard:hover {
+  transform: scaleY(1.05);
+}
+
+.blogImageContainer {
+  width: 100%;
+}
+
+.blogImageContainer img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.blogInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.blogInfoContainer h3 {
+  font-size: 2rem;
+  color: var(--snowWhite);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 40rem;
+}
+
+.blogInfoContainer p {
+  font-size: 1.5rem;
+}
