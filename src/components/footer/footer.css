@@ -1,5 +1,6 @@
 footer {
-  padding: 4rem 8rem;
+  padding: var(--paddingTop) var(--paddingLandR) var(--paddingBottom)
+    var(--paddingLandR);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,9 +58,11 @@ footer {
     color 0.1s linear;
 }
 
-.footerItem:hover {
-  color: var(--skyBlue);
-  transform: scale(0.95);
+@media (hover: hover) {
+  .footerItem:hover {
+    color: var(--skyBlue);
+    transform: scale(0.95);
+  }
 }
 
 .logoRedes {
@@ -81,7 +84,7 @@ footer {
 
 @media (max-width: 768px) {
   footer {
-    padding: var(--paddingTop) var(--paddingLandR);
+    padding: var(--paddingTop) var(--paddingLandR) 2rem var(--paddingLandR);
   }
 
   .socials {

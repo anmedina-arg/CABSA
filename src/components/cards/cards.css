@@ -8,8 +8,10 @@
   color: var(--candyPink);
 }
 
-/* .divContainerCard:hover {
-  background-color: var(--white);
+/* @media (hover: hover) {
+  .divContainerCard:hover {
+    background-color: var(--white);
+  }
 } */
 
 .divContainerIcon {
@@ -55,13 +57,13 @@
   transform: rotateY(180deg);
 }
 
-.turnCard:hover .front {
+/* .turnCard:hover .front {
   transform: rotateY(180deg);
-}
+} */
 
-.turnCard:hover .back {
+/* .turnCard:hover .back {
   transform: rotateY(360deg);
-}
+} */
 
 .back > p {
   color: var(--white);
@@ -70,6 +72,7 @@
   line-height: 150%;
   font-weight: 300;
   letter-spacing: 1px;
+  user-select: none;
 }
 
 .titleStyles {
@@ -80,6 +83,7 @@
   color: var(--white);
   height: auto;
   text-align: center;
+  user-select: none;
 }
 
 /* .divContainerCard:hover .titleStyles {
@@ -94,6 +98,24 @@
 .reverse {
   margin-top: none;
   margin-bottom: 1.5rem;
+}
+
+@media (hover: hover) {
+  .turnCard:hover .front {
+    transform: rotateY(180deg);
+  }
+
+  .turnCard:hover .back {
+    transform: rotateY(360deg);
+  }
+}
+
+.turnCard:active .front {
+  transform: rotateY(180deg);
+}
+
+.turnCard:active .back {
+  transform: rotateY(360deg);
 }
 
 @media (width <= 768px) {

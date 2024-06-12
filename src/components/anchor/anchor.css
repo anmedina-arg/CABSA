@@ -25,12 +25,18 @@
 }
 
 .active,
-.anchor:hover,
-.anchor:active,
 .anchor::selection {
   transform: scale(0.95);
   background-color: var(--skyBlue);
   cursor: pointer;
+}
+
+@media (hover: hover) {
+  .anchor:hover {
+    transform: scale(0.95);
+    background-color: var(--skyBlue);
+    cursor: pointer;
+  }
 }
 
 @media (width <= 768px) {
