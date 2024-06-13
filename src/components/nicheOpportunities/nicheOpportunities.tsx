@@ -12,12 +12,68 @@ export function NicheOpportunities() {
   const [key, setKey] = useState(0);
 
   useEffect(() => {
-    orientation(setWidth, setHeight, setKey, '16rem', '45rem', '32rem', '12rem', '18rem');
-    window.screen.orientation.addEventListener('change', () => orientation(setWidth, setHeight, setKey, '16rem', '45rem', '32rem', '12rem', '18rem'));
+    orientation(
+      setWidth,
+      setHeight,
+      setKey,
+      '16rem',
+      '45rem',
+      '32rem',
+      '12rem',
+      '18rem'
+    );
+    if ('orientation' in screen) {
+      window.screen.orientation.addEventListener('change', () =>
+        orientation(
+          setWidth,
+          setHeight,
+          setKey,
+          '16rem',
+          '45rem',
+          '32rem',
+          '12rem',
+          '18rem'
+        )
+      );
+      return () => {
+        window.screen.orientation.removeEventListener('change', () =>
+          orientation(
+            setWidth,
+            setHeight,
+            setKey,
+            '16rem',
+            '45rem',
+            '32rem',
+            '12rem',
+            '18rem'
+          )
+        );
+      };
+    }
+    window.addEventListener('resize', () =>
+      orientation(
+        setWidth,
+        setHeight,
+        setKey,
+        '16rem',
+        '45rem',
+        '32rem',
+        '12rem',
+        '18rem'
+      )
+    );
     return () => {
-      window.screen.orientation.removeEventListener(
-        'change',
-        () => orientation(setWidth, setHeight, setKey, '16rem', '45rem', '32rem', '12rem', '18rem')
+      window.removeEventListener('resize', () =>
+        orientation(
+          setWidth,
+          setHeight,
+          setKey,
+          '16rem',
+          '45rem',
+          '32rem',
+          '12rem',
+          '18rem'
+        )
       );
     };
   }, []);
@@ -35,7 +91,7 @@ export function NicheOpportunities() {
             turnCard={card.turnCard}
             paragraph={card.paragraph}
           >
-            <Image src={card.icon || ''} alt="icon" className='logo'/>
+            <Image src={card.icon || ''} alt="icon" className="logo" />
           </Card>
         );
       })}

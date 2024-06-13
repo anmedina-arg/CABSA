@@ -5,16 +5,23 @@
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  padding: 1rem 8rem;
+  padding: 1rem 2rem;
   z-index: 100;
   position: fixed;
-  box-shadow: 0 5px 10px 5px rgb(0, 0, 0);
+  box-shadow: 0 2px 40px -3px rgba(255, 255, 255, 0.25);
+  transition: ease-out 0.3s;
+}
+
+.atTop .navbarContainer {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 3rem 2rem;
+  transition: ease-out 0.3s;
 }
 
 .itemsNavbarContainer {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
 .logoMobolie {
@@ -35,6 +42,13 @@
   .navbarContainer {
     position: fixed;
     padding: 1rem 2rem;
+    box-shadow: none;
+    transition: none;
+  }
+
+  .atTop .navbarContainer {
+    padding: 1rem 2rem;
+    transition: none;
   }
 
   .logoWeb {
@@ -59,6 +73,7 @@
 
   .show {
     display: block !important;
+    transition: ease-out 0.3s;
   }
 
   .itemsBurguerMenu {

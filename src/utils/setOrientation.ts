@@ -9,7 +9,8 @@ export function orientation(
   heightDesktop: string
 ) {
   const currentOrientation =
-    window.screen.orientation.type.startsWith('portrait');
+    window.screen.orientation?.type.startsWith('portrait') ||
+    window.innerHeight > window.innerHeight;
 
   const actualWidth = window.innerWidth;
 
@@ -21,11 +22,12 @@ export function orientation(
       : widthDesktop
   );
 
-  setHeight(currentOrientation 
-    ? actualWidth < 768 
-      ? heightMobile 
+  setHeight(
+    currentOrientation
+      ? actualWidth < 768
+        ? heightMobile
+        : heightDesktop
       : heightDesktop
-    : heightDesktop  
   );
 
   setKey((prevKey: number) => prevKey + 1);

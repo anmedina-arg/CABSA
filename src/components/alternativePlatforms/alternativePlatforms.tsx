@@ -1,9 +1,13 @@
 import './alternativePlatforms.css';
 
 export function AlternativePlatforms() {
-  return(
+  return (
     <p className="textStyles">
-      Taroko is an alternative platform for both large and niche funds. <br />The platform conducts thorough due diligence. <br />The fund holds only the alternative funds in which it has an interest in its portfolio. <br />It provides support when there is no PM in alternative investments.
+      Taroko is a curated B2B WealthTech for alternative investments,
+      specifically designed to empower family offices, wealth managers, and
+      financial advisors in constructing resilient and diversified portfolios
+      within private markets. <br />In addition, Taroko’s Media & Educational channel
+      is emerging as the leading voice for alternative investments in LATAM.
     </p>
   );
 }
