@@ -7,8 +7,8 @@ type DropDownMenuProps = {
   title: string;
   open?: boolean;
   linkButton?: boolean;
-  name: string;
-  handleDropDown: any;
+  name?: string;
+  handleDropDown?: any;
 };
 
 function DropDownMenu({
