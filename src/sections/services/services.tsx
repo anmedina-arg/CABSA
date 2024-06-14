@@ -8,6 +8,8 @@ import { SmeService } from '@/components/smeService/smeService';
 import { ClubDeals } from '@/components/clubDeals/clubDeals';
 import { AlternativePlatforms } from '@/components/alternativePlatforms/alternativePlatforms';
 import { useEffect, useState } from 'react';
+import CircleDecoratorHover from '@/components/decorators/circleDecoratorHover';
+import CrossDecoratorHover from '@/components/decorators/crossDecoratorHover';
 
 type isOpenMenu = {
   structured: boolean;
@@ -16,8 +18,6 @@ type isOpenMenu = {
   niche: boolean;
   platforms: boolean;
 };
-import CircleDecoratorHover from '@/components/decorators/circleDecoratorHover';
-import CrossDecoratorHover from '@/components/decorators/crossDecoratorHover';
 
 export function Services() {
   const [isOpen, setIsOpen] = useState<isOpenMenu>({
