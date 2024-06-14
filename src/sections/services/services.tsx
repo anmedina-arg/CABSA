@@ -18,8 +18,6 @@ type isOpenMenu = {
   niche: boolean;
   platforms: boolean;
 };
-import CircleDecoratorHover from '@/components/decorators/circleDecoratorHover';
-import CrossDecoratorHover from '@/components/decorators/crossDecoratorHover';
 
 export function Services() {
   const [isOpen, setIsOpen] = useState<isOpenMenu>({
