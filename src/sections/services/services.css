@@ -1,6 +1,7 @@
 .divContainerServices {
   padding: var(--paddingTop) var(--paddingLandR) var(--paddingBottom)
     var(--paddingLandR);
+  position: relative;
 }
 
 .servicesContent {
@@ -9,6 +10,18 @@
   gap: 5rem;
   position: relative;
 }
+
+.topDecorator {
+  position: absolute;
+  top: 15rem;
+  right: 0;
+}
+
+/* .crossDecorator {
+  position: absolute;
+  top: 100rem;
+  right: 1rem;
+} */
 
 @media (width <= 768px) {
 }

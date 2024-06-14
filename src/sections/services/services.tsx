@@ -16,6 +16,8 @@ type isOpenMenu = {
   niche: boolean;
   platforms: boolean;
 };
+import CircleDecoratorHover from '@/components/decorators/circleDecoratorHover';
+import CrossDecoratorHover from '@/components/decorators/crossDecoratorHover';
 
 export function Services() {
   const [isOpen, setIsOpen] = useState<isOpenMenu>({
@@ -87,6 +89,9 @@ export function Services() {
   return (
     <section id="services" className="divContainerServices">
       <MainTitle title="our services" />
+      <div className='topDecorator'>
+        <CircleDecoratorHover />
+      </div>
       <div className="servicesContent">
         <DropDownMenu
           title="structured notes"
@@ -133,6 +138,9 @@ export function Services() {
         >
           <AlternativePlatforms />
         </DropDownMenu>
+      </div>
+      <div className="crossDecorator">
+        <CrossDecoratorHover />
       </div>
     </section>
   );
