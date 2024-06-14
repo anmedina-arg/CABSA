@@ -139,9 +139,9 @@ export function Services() {
           <AlternativePlatforms />
         </DropDownMenu>
       </div>
-      <div className="crossDecorator">
+      {/* <div className="crossDecorator">
         <CrossDecoratorHover />
-      </div>
+      </div> */}
     </section>
   );
 }
