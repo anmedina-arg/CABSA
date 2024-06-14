@@ -21,9 +21,9 @@ type isOpenMenu = {
 
 export function Services() {
   const [isOpen, setIsOpen] = useState<isOpenMenu>({
-    structured: true,
+    structured: false,
     sme: false,
-    clubDeals: false,
+    clubDeals: true,
     niche: false,
     platforms: false,
   });

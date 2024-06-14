@@ -16,7 +16,7 @@ const CircleDecoratorHover = () => {
       <div className='circle ten'></div>
       <div className='circle eleven'></div>
       <div className='circle twelve'></div>
-      <div className='circle therty'></div>
+      <div className='circle thirty'></div>
     </div>
   );
 };

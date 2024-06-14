@@ -5,8 +5,8 @@
   background-color: #000;
   background: repeating-radial-gradient(
     circle at 100% 50%,
-    #635f5f 0 1px,
-    rgb(7, 7, 7) 1px 12px
+    rgba(99, 95, 95, 0.5) 0 1px,
+    var(--deepNavy) 1px 12px
   );
   clip-path: circle(50% at 100% 50%);
 }

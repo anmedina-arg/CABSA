@@ -46,8 +46,8 @@
 
 .crossDecoratorWeb {
   position: absolute;
-  top: -10rem;
-  right: 1rem;
+  top: -20rem;
+  right: 5rem;
 }
 
 @media (width <= 768px) {

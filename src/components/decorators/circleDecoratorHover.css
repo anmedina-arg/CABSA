@@ -1,6 +1,6 @@
 .circleDecoratorHoverContainer {
-  --circleRadio: 50rem;
-  --diferenceCircleRadio: 3rem;
+  --circleRadio: 40rem;
+  --diferenceCircleRadio: 2.5rem;
 
   position: relative;
 }
@@ -9,7 +9,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid grey;
+  border: 2px solid var(--mediumGray);
+  opacity: 0.5;
   border-radius: 50%;
   background: transparent;
   transition: border-width 0.1s linear;
@@ -82,7 +83,7 @@
   width: calc(var(--circleRadio) - (1 * var(--diferenceCircleRadio)));
   z-index: 12;
 }
-.circleDecoratorHoverContainer .therty {
+.circleDecoratorHoverContainer .thirty {
   height: calc(var(--circleRadio));
   width: calc(var(--circleRadio));
   z-index: 11;
