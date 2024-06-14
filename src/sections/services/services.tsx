@@ -8,6 +8,8 @@ import { SmeService } from '@/components/smeService/smeService';
 import { ClubDeals } from '@/components/clubDeals/clubDeals';
 import { AlternativePlatforms } from '@/components/alternativePlatforms/alternativePlatforms';
 import { useEffect, useState } from 'react';
+import CircleDecoratorHover from '@/components/decorators/circleDecoratorHover';
+import CircleDecorator from '@/components/decorators/circleDecorator';
 
 type isOpenMenu = {
   structured: boolean;
@@ -87,6 +89,12 @@ export function Services() {
   return (
     <section id="services" className="divContainerServices">
       <MainTitle title="our services" />
+      <div className='topDecoratorWeb'>
+        <CircleDecoratorHover />
+      </div>
+      <div className='topDecoratorMobile'>
+        <CircleDecorator />
+      </div>
       <div className="servicesContent">
         <DropDownMenu
           title="structured notes"
