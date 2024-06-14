@@ -38,8 +38,10 @@
   align-self: center;
 }
 
-.buttonLinkClubDeals:hover {
-  font-size: 2.1rem;
+@media (hover: hover) {
+  .buttonLinkClubDeals:hover {
+    font-size: 2.1rem;
+  }
 }
 
 .playerImage {

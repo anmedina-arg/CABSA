@@ -4,7 +4,7 @@ import './navbar.css';
 import Anchor from '../anchor/anchor';
 import CABSAMainLogo from '../CABSAMainLogo/cabsaMainLogo';
 import NavBarMobile from './navbar-mobile';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useScrollSpy } from '@/hooks/useScrolSpy';
 
 type NavbarProps = {

@@ -1,14 +1,26 @@
+'use client';
 import Image from 'next/image';
 import './contact.css';
 import { ContactForm } from '@/components/contactForm/contactForm';
 import contactImage from '@/assets/contactImage.webp';
+import MainTitle from '@/components/mainTitle/mainTitle';
+import { useEffect, useState } from 'react';
 
 export function Contact() {
+  const [isPortrait, setIsPortrait] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth <= 768 ) setIsPortrait(true);
+    else setIsPortrait(false);
+  }, []);
+
   return (
-    <section className="contactSection" id='contact'>
+    <section className="contactSection" id={isPortrait ? undefined : 'contact'}>
       <div className="divContainerContact" >
         <Image src={contactImage} alt="Contact image" className="imageContact" />
-        <h2 className="contactTitle">Contact us</h2>
+        <div className='divContainerTitleContactUs' id= {isPortrait ? 'contact' : undefined}>
+          <MainTitle title="contact us" />
+        </div>
         <p className="contactText">
           Welcome to CABSA. We are here to assist you with all your financial
           needs. Please complete the form below, and a member of our team will

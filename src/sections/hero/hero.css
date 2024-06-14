@@ -6,7 +6,6 @@
   height: 100vh;
   width: 100vw;
   position: relative;
-  padding-top: var(--paddingTop);
 }
 
 .heroBackground {
@@ -91,9 +90,11 @@
   transition: 400ms ease;
 }
 
-.heroButton:hover {
-  cursor: pointer;
-  color: var(--lightGray);
+@media (hover: hover) {
+  .heroButton:hover {
+    cursor: pointer;
+    color: var(--lightGray);
+  }
 }
 
 @media screen and (max-width: 922px) {
