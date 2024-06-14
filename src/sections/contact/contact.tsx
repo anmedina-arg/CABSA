@@ -17,7 +17,7 @@ export function Contact() {
 
   return (
     <section className="contactSection" id={isPortrait ? undefined : 'contact'}>
-      <div className="crossDecorator">
+      <div className="crossDecoratorWeb">
         <CrossDecoratorHover />
       </div>
       <div className="divContainerContact" >
@@ -25,11 +25,6 @@ export function Contact() {
         <div className='divContainerTitleContactUs' id={isPortrait ? 'contact' : undefined}>
           <MainTitle title="contact us" />
         </div>
-      </div>
-      <div className="divContainerContact" id='contact'>
-        <header>
-          <h3 className="contactTitle">Contact Us</h3>
-        </header>
         <p className="contactText">
           Welcome to CABSA. We are here to assist you with all your financial
           needs. Please complete the form below, and a member of our team will

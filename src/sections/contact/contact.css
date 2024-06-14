@@ -44,9 +44,9 @@
   mask-composite: intersect;
 }
 
-.crossDecorator {
+.crossDecoratorWeb {
   position: absolute;
-  top: -20rem;
+  top: -10rem;
   right: 1rem;
 }
 
@@ -69,5 +69,10 @@
   .contactText {
     grid-row: 3/4;
     grid-column: 1/3;
+  }
+
+  .crossDecoratorWeb {
+    display: none;
+    visibility: hidden;
   }
 }

@@ -9,7 +9,7 @@ import { ClubDeals } from '@/components/clubDeals/clubDeals';
 import { AlternativePlatforms } from '@/components/alternativePlatforms/alternativePlatforms';
 import { useEffect, useState } from 'react';
 import CircleDecoratorHover from '@/components/decorators/circleDecoratorHover';
-import CrossDecoratorHover from '@/components/decorators/crossDecoratorHover';
+import CircleDecorator from '@/components/decorators/circleDecorator';
 
 type isOpenMenu = {
   structured: boolean;
@@ -89,8 +89,11 @@ export function Services() {
   return (
     <section id="services" className="divContainerServices">
       <MainTitle title="our services" />
-      <div className='topDecorator'>
+      <div className='topDecoratorWeb'>
         <CircleDecoratorHover />
+      </div>
+      <div className='topDecoratorMobile'>
+        <CircleDecorator />
       </div>
       <div className="servicesContent">
         <DropDownMenu
@@ -139,9 +142,6 @@ export function Services() {
           <AlternativePlatforms />
         </DropDownMenu>
       </div>
-      {/* <div className="crossDecorator">
-        <CrossDecoratorHover />
-      </div> */}
     </section>
   );
 }
