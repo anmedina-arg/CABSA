@@ -6,11 +6,16 @@ import { NicheOpportunities } from '@/components/nicheOpportunities/nicheOpportu
 import { SmeService } from '@/components/smeService/smeService';
 import { ClubDeals } from '@/components/clubDeals/clubDeals';
 import { AlternativePlatforms } from '@/components/alternativePlatforms/alternativePlatforms';
+import CircleDecoratorHover from '@/components/decorators/circleDecoratorHover';
+import CrossDecoratorHover from '@/components/decorators/crossDecoratorHover';
 
 export function Services() {
   return (
     <section id='services' className='divContainerServices'>
       <MainTitle title="our services" />
+      <div className='topDecorator'>
+        <CircleDecoratorHover />
+      </div>
       <div className="servicesContent">
         <DropDownMenu title="structured notes" linkButton={true} open={true}>
           <StructuredNotes />
@@ -27,6 +32,9 @@ export function Services() {
         <DropDownMenu title="alternative platforms" linkButton={true}>
           <AlternativePlatforms />
         </DropDownMenu>
+      </div>
+      <div className="crossDecorator">
+        <CrossDecoratorHover />
       </div>
     </section>
   );
