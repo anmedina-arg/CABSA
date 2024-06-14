@@ -1,0 +1,24 @@
+.circleDecorator {
+  position: relative;
+  height: 40rem;
+  width: 40rem;
+  background-color: #000;
+  background: repeating-radial-gradient(
+    circle at 100% 50%,
+    rgba(99, 95, 95, 0.5) 0 1px,
+    var(--deepNavy) 1px 12px
+  );
+  clip-path: circle(50% at 100% 50%);
+}
+
+.circleDecorator::before {
+  content: '';
+  height: 8rem;
+  width: 8rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(200%, -50%);
+  background-color: #000;
+}

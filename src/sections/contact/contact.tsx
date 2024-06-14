@@ -5,20 +5,24 @@ import { ContactForm } from '@/components/contactForm/contactForm';
 import contactImage from '@/assets/contactImage.webp';
 import MainTitle from '@/components/mainTitle/mainTitle';
 import { useEffect, useState } from 'react';
+import CrossDecoratorHover from '@/components/decorators/crossDecoratorHover';
 
 export function Contact() {
   const [isPortrait, setIsPortrait] = useState(false);
 
   useEffect(() => {
-    if (window.innerWidth <= 768 ) setIsPortrait(true);
+    if (window.innerWidth <= 768) setIsPortrait(true);
     else setIsPortrait(false);
   }, []);
 
   return (
     <section className="contactSection" id={isPortrait ? undefined : 'contact'}>
+      <div className="crossDecoratorWeb">
+        <CrossDecoratorHover />
+      </div>
       <div className="divContainerContact" >
         <Image src={contactImage} alt="Contact image" className="imageContact" />
-        <div className='divContainerTitleContactUs' id= {isPortrait ? 'contact' : undefined}>
+        <div className='divContainerTitleContactUs' id={isPortrait ? 'contact' : undefined}>
           <MainTitle title="contact us" />
         </div>
         <p className="contactText">

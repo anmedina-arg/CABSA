@@ -1,6 +1,7 @@
 .divContainerServices {
   padding: var(--paddingTop) var(--paddingLandR) var(--paddingBottom)
     var(--paddingLandR);
+  position: relative;
 }
 
 .servicesContent {
@@ -10,7 +11,30 @@
   position: relative;
 }
 
+.topDecoratorWeb {
+  position: absolute;
+  top: 15rem;
+  right: 0;
+}
+
+.topDecoratorMobile {
+  visibility: hidden;
+  display: none;
+}
+
 @media (width <= 768px) {
+  .topDecoratorWeb {
+    visibility: hidden;
+  }
+
+  .topDecoratorMobile {
+    visibility: visible;
+    display: block;
+    position: absolute;
+    top: -10rem;
+    right: -5rem;
+    z-index: -1;
+  }
 }
 
 @media (width > 768px) and (width <= 991px) {
