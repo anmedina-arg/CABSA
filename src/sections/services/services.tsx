@@ -142,7 +142,7 @@ export function Services() {
       {/* <div className="crossDecorator">
         <CrossDecoratorHover />
       </div> */}
-    </section>
+    </section >
   );
 }
 
