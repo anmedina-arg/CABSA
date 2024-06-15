@@ -11,6 +11,12 @@
 .blogTitle {
   color: var(--snowWhite);
   font-size: 3rem;
+
+  @media screen and (min-width: 768px) {
+    & {
+      font-size: 5rem;
+    }
+  }
 }
 
 .blogCarrousel {
@@ -88,7 +94,7 @@
 .blogImageContainer {
   width: 100%;
 
-  img {
+  & img {
     width: 100%;
     object-fit: cover;
   }
@@ -101,7 +107,7 @@
   padding: 2rem;
   width: 100%;
 
-  h3 {
+  & h3 {
     font-size: 2rem;
     color: var(--snowWhite);
     display: -webkit-box;
@@ -112,7 +118,20 @@
     max-width: 40rem;
   }
 
-  p {
+  & a {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
+    color: var(--candyPink);
+  }
+
+  @media screen and (min-width: 500px) {
+    & h3 {
+      font-size: 2, 5rem;
+    }
+
+    & a {
+      font-size: 1.8rem;
+    }
   }
 }
