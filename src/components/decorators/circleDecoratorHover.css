@@ -1,0 +1,96 @@
+.circleDecoratorHoverContainer {
+  --circleRadio: 40rem;
+  --diferenceCircleRadio: 2.5rem;
+
+  position: relative;
+}
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid var(--mediumGray);
+  opacity: 0.5;
+  border-radius: 50%;
+  background: transparent;
+  transition: border-width 0.1s linear;
+}
+
+.circleDecoratorHoverContainer .zero {
+  height: calc(var(--circleRadio) - (13 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (13 * var(--diferenceCircleRadio)));
+  border: none;
+  z-index: 24;
+}
+
+.one {
+  height: calc(var(--circleRadio) - (12 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (12 * var(--diferenceCircleRadio)));
+  z-index: 23;
+}
+.circleDecoratorHoverContainer .two {
+  height: calc(var(--circleRadio) - (11 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (11 * var(--diferenceCircleRadio)));
+  z-index: 22;
+}
+.circleDecoratorHoverContainer .three {
+  height: calc(var(--circleRadio) - (10 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (10 * var(--diferenceCircleRadio)));
+  z-index: 21;
+}
+.circleDecoratorHoverContainer .four {
+  height: calc(var(--circleRadio) - (9 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (9 * var(--diferenceCircleRadio)));
+  z-index: 20;
+}
+.circleDecoratorHoverContainer .five {
+  height: calc(var(--circleRadio) - (8 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (8 * var(--diferenceCircleRadio)));
+  z-index: 19;
+}
+.circleDecoratorHoverContainer .six {
+  height: calc(var(--circleRadio) - (7 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (7 * var(--diferenceCircleRadio)));
+  z-index: 18;
+}
+.circleDecoratorHoverContainer .seven {
+  height: calc(var(--circleRadio) - (6 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (6 * var(--diferenceCircleRadio)));
+  z-index: 17;
+}
+.circleDecoratorHoverContainer .height {
+  height: calc(var(--circleRadio) - (5 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (5 * var(--diferenceCircleRadio)));
+  z-index: 16;
+}
+.circleDecoratorHoverContainer .nine {
+  height: calc(var(--circleRadio) - (4 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (4 * var(--diferenceCircleRadio)));
+  z-index: 15;
+}
+.circleDecoratorHoverContainer .ten {
+  height: calc(var(--circleRadio) - (3 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (3 * var(--diferenceCircleRadio)));
+  z-index: 14;
+}
+.circleDecoratorHoverContainer .eleven {
+  height: calc(var(--circleRadio) - (2 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (2 * var(--diferenceCircleRadio)));
+  z-index: 13;
+}
+.circleDecoratorHoverContainer .twelve {
+  height: calc(var(--circleRadio) - (1 * var(--diferenceCircleRadio)));
+  width: calc(var(--circleRadio) - (1 * var(--diferenceCircleRadio)));
+  z-index: 12;
+}
+.circleDecoratorHoverContainer .thirty {
+  height: calc(var(--circleRadio));
+  width: calc(var(--circleRadio));
+  z-index: 11;
+}
+
+@media (hover: hover) {
+  .circle:hover {
+    border-width: 4px;
+  }
+}

@@ -23,14 +23,16 @@ function DropDownMenu({
     <div className="dropDownContainer">
       <div className="headerDropDown">
         <IconDD />
-        <div className="divTitleArrow" onClick={handleDropDown}>
-          <span className="spanTitles" id={name}>
-            {title}
-          </span>
-          <SlArrowDown
-            className={`arrow ${open ? 'arrowD' : 'arrowR'}`}
-            id={name}
-          />
+        <div className='divHandleDropDown' onClick={handleDropDown}>
+          <div className="divTitleArrow" id={name}>
+            <span className="spanTitles" id={name}>
+              {title}
+            </span>
+            <SlArrowDown
+              className={`arrow ${open ? 'arrowD' : 'arrowR'}`}
+              id={name}
+            />
+          </div>
         </div>
       </div>
       <div className={open ? 'showMenu' : 'hiddenMenu'}>

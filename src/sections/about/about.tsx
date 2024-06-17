@@ -10,7 +10,7 @@ export function About() {
       <div className='divContainer'>
         <div className='divText'>
           <header>
-            <MainTitle title='about us' variant='pink'/>
+            <MainTitle title='about us' variant='pink' />
           </header>
           <div>
             <p className='aboutText'>

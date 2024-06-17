@@ -5,13 +5,14 @@
 }
 
 .divTitleArrow {
-  z-index: 1;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: fit-content;
   cursor: pointer;
   gap: 5rem;
+  z-index: 2;
 }
 
 .spanTitles {
@@ -30,7 +31,6 @@
   width: 2rem;
   height: auto;
   margin-right: 1rem;
-  z-index: 2;
 }
 
 .arrowR {
@@ -82,6 +82,14 @@
 @media (hover: hover) {
   .buttonLink:hover {
     font-size: 2.1rem;
+  }
+
+  .divHandleDropDown:hover {
+    cursor: pointer;
+  }
+
+  .divTitleArrow:hover {
+    cursor: pointer;
   }
 }
 
