@@ -1,38 +1,73 @@
 'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ElementRef, ReactNode, useEffect, useRef, useState } from 'react';
+import crypto from 'crypto';
+import {
+  ElementRef,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState,
+  createRef,
+} from 'react';
 import { FaAngleLeft } from 'react-icons/fa';
 import { FaAngleRight } from 'react-icons/fa';
-import { GoArrowUpRight } from 'react-icons/go';
 import './blog.css';
-
-type BlogCard = {
-  img: string;
-  title: string;
-  href: string;
-};
+import BlogCard, { NewsEntry } from './BlogCard';
 
 export function Blog(): ReactNode {
   const [showArrows, setShowArrows] = useState(false);
   const carrouselRef = useRef<ElementRef<'div'> | null>(null);
-  const [newsEntries, setNewsEntries] = useState<BlogCard[]>([
+  const newsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [newsEntries, setNewsEntries] = useState<NewsEntry[]>([
     {
+      id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
       title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
       href: '/',
     },
     {
+      id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
       title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
       href: '/',
     },
     {
+      id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
       title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
       href: '/',
     },
     {
+      id: crypto.randomBytes(16).toString('hex'),
+      img: 'https://picsum.photos/seed/computer/250/250.webp',
+      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      href: '/',
+    },
+    {
+      id: crypto.randomBytes(16).toString('hex'),
+      img: 'https://picsum.photos/seed/computer/250/250.webp',
+      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      href: '/',
+    },
+    {
+      id: crypto.randomBytes(16).toString('hex'),
+      img: 'https://picsum.photos/seed/computer/250/250.webp',
+      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      href: '/',
+    },
+    {
+      id: crypto.randomBytes(16).toString('hex'),
+      img: 'https://picsum.photos/seed/computer/250/250.webp',
+      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      href: '/',
+    },
+    {
+      id: crypto.randomBytes(16).toString('hex'),
+      img: 'https://picsum.photos/seed/computer/250/250.webp',
+      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      href: '/',
+    },
+    {
+      id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
       title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
       href: '/',
@@ -48,6 +83,7 @@ export function Blog(): ReactNode {
   }
 
   useEffect(() => {
+    const news = newsRef.current;
     const resizeObserver = new ResizeObserver(entries => {
       for (const entry of entries) {
         if (entry.target instanceof Element) {
@@ -66,34 +102,22 @@ export function Blog(): ReactNode {
       <h2 className="blogTitle">Latest News</h2>
       <div ref={carrouselRef} className="blogCarrousel">
         {showArrows && <FaAngleLeft className="arrow" />}
-        {newsEntries.map((entrie: BlogCard) => {
+        {newsEntries.map((entry, index) => {
           return (
             <BlogCard
-              key={entrie.title}
-              title={entrie.title}
-              img={entrie.img}
-              href={entrie.href}
+              ref={element => {
+                newsRef.current[index] = element;
+              }}
+              id={entry.id}
+              key={entry.id}
+              title={entry.title}
+              img={entry.img}
+              href={entry.href}
             />
           );
         })}
         {showArrows && <FaAngleRight className="arrow" />}
       </div>
     </section>
-  );
-}
-
-export function BlogCard(props: BlogCard): ReactNode {
-  return (
-    <article className="blogCard">
-      <div className="blogImageContainer">
-        <Image src={props.img} alt="blog image" width={300} height={250} />
-      </div>
-      <div className="blogInfoContainer">
-        <h3>{props.title}</h3>
-        <Link href={props.href}>
-          Read More <GoArrowUpRight />
-        </Link>
-      </div>
-    </article>
   );
 }
