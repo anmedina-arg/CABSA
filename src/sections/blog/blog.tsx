@@ -14,9 +14,9 @@ import './blog.css';
 import BlogCard, { NewsEntry } from './BlogCard';
 
 export function Blog(): ReactNode {
-  const [showArrows, setShowArrows] = useState(false);
   const carrouselRef = useRef<ElementRef<'div'> | null>(null);
   const newsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [showArrows, setShowArrows] = useState(false);
   const [newsEntries, setNewsEntries] = useState<NewsEntry[]>([
     {
       id: crypto.randomBytes(16).toString('hex'),
@@ -33,46 +33,85 @@ export function Blog(): ReactNode {
     {
       id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
       href: '/',
     },
     {
       id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
       href: '/',
     },
     {
       id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
       href: '/',
     },
     {
       id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
       href: '/',
     },
     {
       id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
       href: '/',
     },
     {
       id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
       href: '/',
     },
     {
       id: crypto.randomBytes(16).toString('hex'),
       img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
       href: '/',
     },
   ]);
+
+  function slideLeft() {
+    const carrousel = carrouselRef.current;
+    const scrollAmount = newsRef.current[0]!.offsetWidth + 10;
+
+    if (carrousel?.scrollLeft === 0) {
+      carrousel.scrollTo({
+        left: carrousel.scrollWidth,
+        behavior: 'smooth',
+      });
+      return;
+    }
+    carrousel!.scrollTo({
+      left: carrousel!.scrollLeft - scrollAmount,
+      behavior: 'smooth',
+    });
+  }
+
+  function slideRight() {
+    const carrousel = carrouselRef.current;
+    const scrollAmount = newsRef.current[0]!.offsetWidth + 10;
+
+    if (
+      Math.ceil(carrousel!.scrollLeft + carrousel!.clientWidth) >=
+      carrousel!.scrollWidth
+    ) {
+      console.log('here');
+      console.log(carrousel?.scrollWidth);
+      carrousel!.scrollTo({
+        left: 0,
+        behavior: 'smooth',
+      });
+      return;
+    }
+    carrousel?.scrollTo({
+      left: carrousel.scrollLeft + scrollAmount,
+      behavior: 'smooth',
+    });
+  }
 
   function checkWidthchange(carrousel: HTMLDivElement | null) {
     if (carrousel!.scrollWidth > carrousel!.clientWidth) {
@@ -101,7 +140,7 @@ export function Blog(): ReactNode {
     <section id="blog" className="blogSection">
       <h2 className="blogTitle">Latest News</h2>
       <div ref={carrouselRef} className="blogCarrousel">
-        {showArrows && <FaAngleLeft className="arrow" />}
+        {showArrows && <FaAngleLeft className="arrow" onClick={slideLeft} />}
         {newsEntries.map((entry, index) => {
           return (
             <BlogCard
@@ -116,7 +155,7 @@ export function Blog(): ReactNode {
             />
           );
         })}
-        {showArrows && <FaAngleRight className="arrow" />}
+        {showArrows && <FaAngleRight className="arrow" onClick={slideRight} />}
       </div>
     </section>
   );
