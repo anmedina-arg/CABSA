@@ -7,7 +7,6 @@ export type NewsEntry = {
   id: string;
   img: string;
   title: string;
-  href: string;
 };
 
 function BlogCard(props: NewsEntry, ref: React.Ref<HTMLDivElement>): ReactNode {
@@ -18,7 +17,7 @@ function BlogCard(props: NewsEntry, ref: React.Ref<HTMLDivElement>): ReactNode {
       </div>
       <div className="blogInfoContainer">
         <h3>{props.title}</h3>
-        <Link href={props.href}>
+        <Link href={`/news/${props.id}`} passHref>
           Read More <GoArrowUpRight />
         </Link>
       </div>

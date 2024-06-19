@@ -19,58 +19,29 @@ export function Blog(): ReactNode {
   const [showArrows, setShowArrows] = useState(false);
   const [newsEntries, setNewsEntries] = useState<NewsEntry[]>([
     {
-      id: crypto.randomBytes(16).toString('hex'),
+      id: '5931a932-2be4-46d4-87b4-b687e84c93aa',
       img: 'https://picsum.photos/seed/computer/250/250.webp',
       title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
-      href: '/',
     },
     {
-      id: crypto.randomBytes(16).toString('hex'),
+      id: '5931a932-2be4-46d4-87b4-b687e84c93aa',
       img: 'https://picsum.photos/seed/computer/250/250.webp',
       title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
-      href: '/',
     },
     {
-      id: crypto.randomBytes(16).toString('hex'),
+      id: '5931a932-2be4-46d4-87b4-b687e84c93aa',
       img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
-      href: '/',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
     },
     {
-      id: crypto.randomBytes(16).toString('hex'),
+      id: '5931a932-2be4-46d4-87b4-b687e84c93aa',
       img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
-      href: '/',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
     },
     {
-      id: crypto.randomBytes(16).toString('hex'),
+      id: '5931a932-2be4-46d4-87b4-b687e84c93aa',
       img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
-      href: '/',
-    },
-    {
-      id: crypto.randomBytes(16).toString('hex'),
-      img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
-      href: '/',
-    },
-    {
-      id: crypto.randomBytes(16).toString('hex'),
-      img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
-      href: '/',
-    },
-    {
-      id: crypto.randomBytes(16).toString('hex'),
-      img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
-      href: '/',
-    },
-    {
-      id: crypto.randomBytes(16).toString('hex'),
-      img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. iure',
-      href: '/',
+      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
     },
   ]);
 
@@ -151,7 +122,6 @@ export function Blog(): ReactNode {
               key={entry.id}
               title={entry.title}
               img={entry.img}
-              href={entry.href}
             />
           );
         })}
