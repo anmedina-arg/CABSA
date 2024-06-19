@@ -19,7 +19,7 @@ export function NicheOpportunities() {
       '16rem',
       '45rem',
       '32rem',
-      '12rem',
+      '16rem',
       '18rem'
     );
     if ('orientation' in screen) {
@@ -31,7 +31,7 @@ export function NicheOpportunities() {
           '16rem',
           '45rem',
           '32rem',
-          '12rem',
+          '16rem',
           '18rem'
         )
       );
@@ -44,7 +44,7 @@ export function NicheOpportunities() {
             '16rem',
             '45rem',
             '32rem',
-            '12rem',
+            '16rem',
             '18rem'
           )
         );
@@ -58,7 +58,7 @@ export function NicheOpportunities() {
         '16rem',
         '45rem',
         '32rem',
-        '12rem',
+        '16rem',
         '18rem'
       )
     );
@@ -71,7 +71,7 @@ export function NicheOpportunities() {
           '16rem',
           '45rem',
           '32rem',
-          '12rem',
+          '16rem',
           '18rem'
         )
       );
