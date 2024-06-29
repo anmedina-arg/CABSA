@@ -1,0 +1,42 @@
+.newsPage.pdfobject-container {
+  width: 70%;
+  height: 100vh;
+}
+
+.pdfobject-container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.newsPage:has(.pdfobject-fallback-container) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  width: 100dvw;
+  margin: 0 auto;
+}
+
+.pdfobject-fallback-container {
+  display: flex;
+  vertical-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  padding: 1rem;
+  text-align: center;
+
+  h3 {
+    font-size: 3rem;
+    color: var(--snowWhite);
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}

@@ -1,18 +1,8 @@
-.modal-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
 .modal {
-  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
   max-width: 1024px;
   height: auto;
   max-height: 800px;
@@ -24,6 +14,7 @@
   margin: 0 auto;
   overflow-y: auto;
   scrollbar-width: none;
+  background: transparent;
 }
 
 .modal::backdrop {
@@ -34,24 +25,23 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 48px;
-  height: 48px;
-  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  background-color: var(--snowWhite);
   border: none;
-  border-radius: 15px; /* Circular shape */
+  border-radius: 50%;
+  /* Circular shape */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
-  font-size: 24px; /* Adjust font size as needed */
+  font-weight: 700;
+  font-size: 1.8rem;
+  transition: all 0.2s linear;
+  /* Adjust font size as needed */
 }
 
 .close-button:hover {
-  background-color: #eee;
-}
-
-.close-button:after {
-  content: 'x';
-  color: black;
+  background-color: #ff3646;
+  color: var(--snowWhite);
 }

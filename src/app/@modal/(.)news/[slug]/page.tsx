@@ -1,4 +1,4 @@
-import { News } from '@/app/news/[id]/news';
+import { News } from '@/app/news/[slug]/news';
 import { Modal } from './modal';
 
 export default function NewsModal({
