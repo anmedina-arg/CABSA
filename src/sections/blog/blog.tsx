@@ -10,6 +10,7 @@ import {
 } from 'react';
 import { FaAngleLeft } from 'react-icons/fa';
 import { FaAngleRight } from 'react-icons/fa';
+import blogImage from '@/assets/nba.webp';
 import './blog.css';
 import BlogCard, { NewsEntry } from './BlogCard';
 
@@ -20,28 +21,9 @@ export function Blog(): ReactNode {
   const [newsEntries, setNewsEntries] = useState<NewsEntry[]>([
     {
       id: '5931a932-2be4-46d4-87b4-b687e84c93aa',
-      img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
-    },
-    {
-      id: '5931a932-2be4-46d4-87b4-b687e84c93aa',
-      img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
-    },
-    {
-      id: '5931a932-2be4-46d4-87b4-b687e84c93aa',
-      img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
-    },
-    {
-      id: '5931a932-2be4-46d4-87b4-b687e84c93aa',
-      img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
-    },
-    {
-      id: '5931a932-2be4-46d4-87b4-b687e84c93aa',
-      img: 'https://picsum.photos/seed/computer/250/250.webp',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure',
+      img: blogImage,
+      title: 'CABSA SPORTS VIEW',
+      slug: 'CABSA_SPORTS_TESIS',
     },
   ]);
 
@@ -70,8 +52,6 @@ export function Blog(): ReactNode {
       Math.ceil(carrousel!.scrollLeft + carrousel!.clientWidth) >=
       carrousel!.scrollWidth
     ) {
-      console.log('here');
-      console.log(carrousel?.scrollWidth);
       carrousel!.scrollTo({
         left: 0,
         behavior: 'smooth',
@@ -93,7 +73,6 @@ export function Blog(): ReactNode {
   }
 
   useEffect(() => {
-    const news = newsRef.current;
     const resizeObserver = new ResizeObserver(entries => {
       for (const entry of entries) {
         if (entry.target instanceof Element) {
@@ -122,6 +101,7 @@ export function Blog(): ReactNode {
               key={entry.id}
               title={entry.title}
               img={entry.img}
+              slug={entry.slug}
             />
           );
         })}
