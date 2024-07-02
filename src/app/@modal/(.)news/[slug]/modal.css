@@ -1,0 +1,67 @@
+.modal {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  border: none;
+  border-radius: 12px;
+  background-color: transparent;
+  padding: 20px;
+  margin: 0 auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  background: transparent;
+
+  &:has(.pdfobject-fallback-container) {
+    background-color: var(--deepNavy);
+  }
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: fit-content;
+  width: 90%;
+
+  &:has(.pdfobject-container) {
+    height: 100dvh;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--snowWhite);
+  border: none;
+  border-radius: 50%;
+  /* Circular shape */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  transition:
+    background-color 0.2s linear,
+    color 0.2s linear;
+  /* Adjust font size as needed */
+}
+
+article:has(.pdfobject-fallback-container) ~ .close-button {
+  top: -10px;
+}
+
+.close-button:hover {
+  background-color: #ff3646;
+  color: var(--snowWhite);
+}
