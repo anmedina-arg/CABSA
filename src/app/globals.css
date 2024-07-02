@@ -33,6 +33,11 @@ body {
   background-color: var(--deepNavy);
 }
 
+body:has(dialog[open]) {
+  overflow-y: hidden;
+  position: fixed;
+}
+
 body::-webkit-scrollbar {
   width: 1.2rem;
 }
@@ -57,7 +62,7 @@ hr {
   border-color: var(--mediumGray);
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
   :root {
     --paddingTop: 8rem;
     --paddingLandR: 2rem;
@@ -69,7 +74,7 @@ hr {
   }
 }
 
-@media (width > 768px) and (width <= 991px) {
+@media (width > 768px) and (width <=991px) {
   :root {
     --paddingTop: 8rem;
     --paddingLandR: 4rem;

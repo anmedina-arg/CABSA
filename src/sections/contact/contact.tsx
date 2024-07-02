@@ -17,9 +17,6 @@ export function Contact() {
 
   return (
     <section className="contactSection" id={isPortrait ? undefined : 'contact'}>
-      <div className="crossDecoratorWeb">
-        <CrossDecoratorHover />
-      </div>
       <div className="divContainerContact" >
         <Image src={contactImage} alt="Contact image" className="imageContact" />
         <div className='divContainerTitleContactUs' id={isPortrait ? 'contact' : undefined}>

@@ -1,0 +1,60 @@
+.newsPage.pdfobject-container {
+  width: 70%;
+  height: 100vh;
+}
+
+.pdfobject-container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.newsPage:has(.pdfobject-fallback-container) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  width: 100dvw;
+  margin: 0 auto;
+}
+
+.backToBlog {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 1.2rem;
+  background-color: var(--skyBlue);
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--snowWhite);
+  transition: 400ms ease;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pdfobject-fallback-container {
+  display: flex;
+  vertical-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  padding: 1rem;
+  text-align: center;
+
+  h3 {
+    font-size: 3rem;
+    color: var(--snowWhite);
+  }
+
+  p {
+    font-size: 2rem;
+  }
+}

@@ -58,10 +58,10 @@ export const itemsNavbar: itemsNavbarProps[] = [
     title: 'our services',
     path: '#services'
   },
-  // {
-  //   title: 'news',
-  //   path: '#news'
-  // },
+  {
+    title: 'news',
+    path: '#news'
+  },
   {
     title: 'contact us',
     path: '#contact'
