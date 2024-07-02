@@ -1,11 +1,11 @@
 .blogSection {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
   width: 100%;
-  margin: 10rem auto;
-  padding: var(--paddingTop) var(--paddingLandR);
+  padding: var(--paddingTop) var(--paddingLandR) var(--paddingBottom)
+    var(--paddingLandR);
   position: relative;
+  align-items: flex-start;
 }
 
 .blogTitle {
@@ -17,6 +17,18 @@
       font-size: 5rem;
     }
   }
+
+  @media screen and (min-width: 991px) {
+    & {
+      font-size: 5rem;
+    }
+  }
+}
+
+.crossDecoratorWeb {
+  position: absolute;
+  top: -20rem;
+  right: 5rem;
 }
 
 .blogCarrousel {
@@ -69,7 +81,7 @@
 
   @media screen and (min-width: 768px) {
     & {
-      grid-auto-columns: calc(100% / 3 - 2rem);
+      grid-auto-columns: calc(100% / 3 + 5rem);
       margin-left: 2rem;
     }
   }
@@ -82,8 +94,7 @@
   justify-content: space-between;
   height: 40rem;
   background: var(--deepTeal);
-  border-bottom-right-radius: 2rem;
-  border-bottom-left-radius: 2rem;
+  border-radius: 2rem;
   transition: transform 100ms ease-in-out;
   scroll-snap-align: center;
 
@@ -98,6 +109,8 @@
   & img {
     width: 100%;
     object-fit: cover;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
   }
 }
 
@@ -130,9 +143,34 @@
     & h3 {
       font-size: 2.5rem;
     }
+  }
+}
 
-    & a {
-      font-size: 1.8rem;
-    }
+.description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.pDescBlog {
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.pDescBlog > span > a {
+  display: inline;
+  font-weight: 500;
+}
+
+.iconReadMore {
+  margin-left: 0.3rem;
+  align-self: self-end;
+}
+
+@media (width < 768px) {
+  .crossDecoratorWeb {
+    display: none;
+    visibility: hidden;
   }
 }

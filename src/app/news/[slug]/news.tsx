@@ -1,13 +1,24 @@
 'use client';
 
 import PDFObject from 'pdfobject';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { IoIosArrowBack } from 'react-icons/io';
 import './news.css';
 export function News({ id, className }: { id: string; className?: string }) {
   const pathname = usePathname().replace('/news', '');
   const articleRef = useRef<HTMLElement | null>(null);
+  const [ isModal, setIsModal ] = useState(false);
+  const router = useRouter();
+
+  function onDismiss() {
+    router.back();
+  }
+
   useEffect(() => {
+    if (document.getElementById('backToBlog')?.parentElement?.id === 'modal') setIsModal(true)
+    else setIsModal(false)
+
     const article = articleRef?.current;
     const options = {
       fallbackLink: `
@@ -21,12 +32,23 @@ export function News({ id, className }: { id: string; className?: string }) {
     `,
     };
     PDFObject.embed(`${pathname}`, article, options);
+
+    
+
   }, []);
   return (
-    <article
-      className={`${className ? className : ''}`}
-      ref={articleRef}
-      id={id}
-    ></article>
+    <>
+      { isModal ? undefined :
+        <button onClick={onDismiss} className="backToBlog" id="backToBlog">
+          <IoIosArrowBack />
+          Back
+        </button>
+      }
+      <article
+        className={`${className ? className : ''}`}
+        ref={articleRef}
+        id={id}
+      ></article>
+    </>
   );
 }
