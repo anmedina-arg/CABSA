@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { ElementRef, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import './modal.css';
-import { RxCross2 } from "react-icons/rx";
+import { RxCross2 } from 'react-icons/rx';
 
 export function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
