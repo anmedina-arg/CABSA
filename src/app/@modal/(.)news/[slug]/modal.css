@@ -65,3 +65,9 @@ article:has(.pdfobject-fallback-container) ~ .close-button {
   background-color: #ff3646;
   color: var(--snowWhite);
 }
+
+@media (width < 991px) {
+  .modal {
+    align-items: center;
+  }
+}

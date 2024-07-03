@@ -28,7 +28,7 @@ export function News({ id, className }: { id: string; className?: string }) {
           <h3>Ups!</h3>
           <p>
             It seems your browser doesn&apos;t support PDF. Please download the file
-            in order to read the <a href='[url]' download>${pathname.replace('/', '').replace(/_/g, ' ').replace('.pdf', '')} </a> article
+            in order to read the <a href='[url]' download>${pathname.replace('/', '').replace(/_/g, ' ').replace('.pdf', '')}</a> article
           </p>
         </div>
     `,

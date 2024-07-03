@@ -1,0 +1,81 @@
+.articleCardContainer {
+  width: 100%;
+  height: fit-content;
+  background-color: var(--deepTeal);
+  border-radius: 2rem;
+}
+
+.imageCardNews {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3600/2400;
+  border-radius: 2rem 2rem 0 0;
+  object-fit: cover;
+}
+
+.blogInfoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.titleCard {
+  font-size: 2rem;
+  color: var(--snowWhite);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 40rem;
+}
+
+.linkReadMore {
+  display: flex;
+  align-items: center;
+  color: var(--candyPink);
+  font-weight: 500;
+}
+
+.description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.pDescBlog {
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.iconReadMore {
+  margin-left: 0.3rem;
+  align-self: self-end;
+}
+
+@media (width < 768px) {
+  .blogInfoContainer {
+    padding: 1.5rem;
+  }
+
+  .articleCardContainer {
+    width: 100%;
+  }
+}
+
+@media (width < 991px) {
+  .titleCard {
+    font-size: 2.5rem;
+  }
+
+  .pDescBlog {
+    font-size: 2rem;
+  }
+
+  .description {
+    -webkit-line-clamp: 4;
+  }
+}

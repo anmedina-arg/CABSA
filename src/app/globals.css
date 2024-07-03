@@ -13,6 +13,8 @@
   --paddingTop: 10rem;
   --paddingLandR: 8rem;
   --paddingBottom: 2.5rem;
+
+  --swiper-pagination-bullet-inactive-color: #e0e0e0 !important;
 }
 
 * {
