@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { IoIosArrowBack } from 'react-icons/io';
 import './news.css';
+
+
 export function News({ id, className }: { id: string; className?: string }) {
   const pathname = usePathname().replace('/news', '');
   const articleRef = useRef<HTMLElement | null>(null);
@@ -16,8 +18,8 @@ export function News({ id, className }: { id: string; className?: string }) {
   }
 
   useEffect(() => {
-    if (document.getElementById('backToBlog')?.parentElement?.id === 'modal') setIsModal(true)
-    else setIsModal(false)
+    if (document.getElementById('backToBlog')?.parentElement?.id === 'modal') setIsModal(true);
+    else setIsModal(false);
 
     const article = articleRef?.current;
     const options = {
