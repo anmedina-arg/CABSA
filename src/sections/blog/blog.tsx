@@ -13,6 +13,8 @@ import { FaAngleRight } from 'react-icons/fa';
 import blogImage from '@/assets/nba.webp';
 import './blog.css';
 import BlogCard, { NewsEntry } from './BlogCard';
+import CrossDecoratorHover from '@/components/decorators/crossDecoratorHover';
+import MainTitle from '@/components/mainTitle/mainTitle';
 
 export function Blog(): ReactNode {
   const carrouselRef = useRef<ElementRef<'div'> | null>(null);
@@ -24,7 +26,8 @@ export function Blog(): ReactNode {
       img: blogImage,
       title: 'CABSA SPORTS VIEW',
       slug: 'CABSA_SPORTS_TESIS',
-    },
+      description: 'The global sport s and entertainment indus try has experienced significant and consistent growth in the recent period...'
+    }
   ]);
 
   function slideLeft() {
@@ -87,8 +90,11 @@ export function Blog(): ReactNode {
     };
   }, []);
   return (
-    <section id="blog" className="blogSection">
-      <h2 className="blogTitle">Latest News</h2>
+    <section id="news" className="blogSection">
+      <div className="crossDecoratorWeb">
+        <CrossDecoratorHover />
+      </div>
+      <MainTitle title='Latest News'/>
       <div ref={carrouselRef} className="blogCarrousel">
         {showArrows && <FaAngleLeft className="arrow" onClick={slideLeft} />}
         {newsEntries.map((entry, index) => {
@@ -102,6 +108,7 @@ export function Blog(): ReactNode {
               title={entry.title}
               img={entry.img}
               slug={entry.slug}
+              description={entry.description}
             />
           );
         })}

@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import { ElementRef, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import './modal.css';
+import { RxCross2 } from 'react-icons/rx';
+
 export function Modal({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const dialogRef = useRef<ElementRef<'dialog'>>(null);
@@ -20,10 +22,10 @@ export function Modal({ children }: { children: React.ReactNode }) {
 
   return createPortal(
     <dialog ref={dialogRef} className="modal" onClose={onDismiss}>
-      <div className="modal-content">
+      <div className="modal-content" id='modal'>
         {children}
         <button onClick={onDismiss} className="close-button">
-          X
+          <RxCross2 />
         </button>
       </div>
     </dialog>,

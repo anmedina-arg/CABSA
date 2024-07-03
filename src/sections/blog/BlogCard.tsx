@@ -9,6 +9,7 @@ export type NewsEntry = {
   img: StaticImageData;
   title: string;
   slug: string;
+  description: string;
 };
 
 function BlogCard(props: NewsEntry, ref: React.Ref<HTMLDivElement>): ReactNode {
@@ -18,10 +19,16 @@ function BlogCard(props: NewsEntry, ref: React.Ref<HTMLDivElement>): ReactNode {
         <Image src={props.img} alt="blog image" width={300} height={250} />
       </div>
       <div className="blogInfoContainer">
-        <h3>{props.title}</h3>{' '}
-        <Link href={`/news/${props.slug}.pdf`} passHref>
-          Read More <GoArrowUpRight />
-        </Link>
+        <h3>{props.title}</h3>
+        <p className="pDescBlog">
+          <span className="description">{props.description}</span>
+          <span>
+            <Link href={`/news/${props.slug}.pdf`} passHref>
+              Read More
+              <GoArrowUpRight className="iconReadMore" />
+            </Link>
+          </span>
+        </p>
       </div>
     </article>
   );

@@ -12,8 +12,8 @@ const HomePage = () => {
       <Hero />
       <About />
       <Services />
-      <Contact />
       <Blog />
+      <Contact />
       <Footer footerItems={footerItems} />
     </>
   );
