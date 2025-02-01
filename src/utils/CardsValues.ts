@@ -6,7 +6,11 @@ import compass from '@/assets/guidance.webp';
 import access from '@/assets/access.webp';
 import marketIntelligence from '@/assets/marketIntelligence.webp';
 import customizedProducts from '@/assets/customizedProducts.webp';
-import brandBoost from '@/assets/brandBoost.webp';
+import dataDriven from '@/assets/dataDrivenIcon.png';
+import aproveIcon from '@/assets/approveIcon.png';
+import benefitIcon from '@/assets/benefitIcon.png';
+import briefcaseIcon from '@/assets/briefcaseIcon.png';
+import investmentIcon from '@/assets/investmentIcon.png';
 import { StaticImageData } from 'next/image';
 
 
@@ -76,11 +80,38 @@ export const structuredNotesCards: Card[] = [
     icon: customizedProducts
   },
   {
-    title: 'BRAND BOOST',
+    title: 'DATA DRIVEN',
     flexDirection: 'column',
     turnCard: false,
-    icon: brandBoost
+    icon: dataDriven
   }
+];
+
+export const alternativeFoundCards: Card[] = [
+  {
+    title: 'PRIVATE',
+    flexDirection: 'column',
+    turnCard: false,
+    icon: aproveIcon
+  },
+  {
+    title: 'REAL STATE',
+    flexDirection: 'column',
+    turnCard: false,
+    icon: investmentIcon
+  },
+  {
+    title: 'PRIVATE EQUITY',
+    flexDirection: 'column',
+    turnCard: false,
+    icon: briefcaseIcon
+  },
+  {
+    title: 'INNOVATIVE NICHE OPPORTUNITY',
+    flexDirection: 'column',
+    turnCard: false,
+    icon: benefitIcon
+  },
 ];
 
 export const smeCards: Card[] = [

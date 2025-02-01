@@ -2,11 +2,14 @@
 import Image from 'next/image';
 import { Card } from '../cards/cards';
 import './structuredNotes.css';
-import { structuredNotesCards } from '@/utils/CardsValues';
 import { useEffect, useState } from 'react';
 import { orientation } from '@/utils/setOrientation';
 
-export function StructuredNotes() {
+type StructuredNotesProps = {
+  input: any
+}
+
+export function StructuredNotes({ input }: StructuredNotesProps) {
   const [width, setWidth] = useState('');
   const [height, setHeight] = useState('');
   const [key, setKey] = useState(0);
@@ -80,7 +83,7 @@ export function StructuredNotes() {
 
   return (
     <div className="divContainerCards" key={key}>
-      {structuredNotesCards.map((card, key) => {
+      {input.map((card: any, key: any) => {
         return (
           <Card
             key={key}

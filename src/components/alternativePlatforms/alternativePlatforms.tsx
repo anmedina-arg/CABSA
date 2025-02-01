@@ -3,11 +3,7 @@ import './alternativePlatforms.css';
 export function AlternativePlatforms() {
   return (
     <p className="textStyles">
-      Taroko is a curated B2B WealthTech for alternative investments,
-      specifically designed to empower family offices, wealth managers, and
-      financial advisors in constructing resilient and diversified portfolios
-      within private markets. <br />In addition, Taroko’s Media & Educational channel
-      is emerging as the leading voice for alternative investments in LATAM.
+      We distribute high-quality mutual funds from our esteemed partners at <strong>Harrington Cooper,</strong> renowned for their track record and diversity. These funds provide access to a <strong>wide range of investment opportunities,</strong> tailored to various regional and sectorial theses, ensuring a solid foundation for public market strategies.
     </p>
   );
 }

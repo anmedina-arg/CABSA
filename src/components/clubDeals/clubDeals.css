@@ -44,15 +44,20 @@
   }
 }
 
-.playerImage {
+.americaImage {
   grid-row: 1/3;
   grid-column: 2/3;
   width: 30vw;
   height: auto;
-  mask-image: linear-gradient(to bottom, black 80%, transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent 1%,
+    #00030b,
+    transparent 99%
+  );
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
   .divContainerClubDeals {
     grid-template-rows: repeat(3, auto);
     gap: 5rem;
@@ -72,14 +77,14 @@
     width: 100%;
   }
 
-  .playerImage {
+  .americaImage {
     width: 100%;
     grid-row: 2/3;
     grid-column: 1/3;
   }
 }
 
-@media (width > 768px) and (width <= 1200px) {
+@media (width > 768px) and (width <=1200px) {
   .clubDealsText {
     max-width: 80%;
   }

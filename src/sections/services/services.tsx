@@ -10,22 +10,21 @@ import { AlternativePlatforms } from '@/components/alternativePlatforms/alternat
 import { useEffect, useState } from 'react';
 import CircleDecoratorHover from '@/components/decorators/circleDecoratorHover';
 import CircleDecorator from '@/components/decorators/circleDecorator';
+import { structuredNotesCards, alternativeFoundCards } from '@/utils/CardsValues';
 
 type isOpenMenu = {
   structured: boolean;
-  sme: boolean;
-  clubDeals: boolean;
-  niche: boolean;
-  platforms: boolean;
+  mutualFound: boolean;
+  singleDeals: boolean;
+  altrnativeFounds: boolean;
 };
 
 export function Services() {
   const [isOpen, setIsOpen] = useState<isOpenMenu>({
     structured: false,
-    sme: false,
-    clubDeals: true,
-    niche: false,
-    platforms: false,
+    mutualFound: false,
+    singleDeals: true,
+    altrnativeFounds: false,
   });
 
   function handleDropDown(e: any) {
@@ -36,10 +35,9 @@ export function Services() {
 
     const closeAll = {
       structured: false,
-      sme: false,
-      clubDeals: false,
-      niche: false,
-      platforms: false,
+      mutualFound: false,
+      singleDeals: false,
+      altrnativeFounds: false,
     };
 
     const closeNow = {
@@ -52,11 +50,10 @@ export function Services() {
     });
 
     if (
-      !closeNow.clubDeals &&
+      !closeNow.singleDeals &&
       !closeNow.structured &&
-      !closeNow.sme &&
-      !closeNow.niche &&
-      !closeNow.platforms
+      !closeNow.mutualFound &&
+      !closeNow.altrnativeFounds
     )
       window.location.hash = 'services';
     else window.location.hash = id;
@@ -103,43 +100,34 @@ export function Services() {
           handleDropDown={handleDropDown}
           open={isOpen.structured}
         >
-          <StructuredNotes />
+          <StructuredNotes input={structuredNotesCards} />
         </DropDownMenu>
         <DropDownMenu
-          title="sme u.s. lending fund"
+          title="mutual founds"
           linkButton={true}
-          name="sme"
+          name="mutualFound"
           handleDropDown={handleDropDown}
-          open={isOpen.sme}
+          open={isOpen.mutualFound}
         >
-          <SmeService />
+          <AlternativePlatforms />
         </DropDownMenu>
         <DropDownMenu
-          title="club deals"
+          title="single deals"
           linkButton={false}
-          name="clubDeals"
+          name="singleDeals"
           handleDropDown={handleDropDown}
-          open={isOpen.clubDeals}
+          open={isOpen.singleDeals}
         >
           <ClubDeals />
         </DropDownMenu>
         <DropDownMenu
-          title="niche opportunities"
+          title="altrnative founds"
           linkButton={true}
-          name="niche"
+          name="altrnativeFounds"
           handleDropDown={handleDropDown}
-          open={isOpen.niche}
+          open={isOpen.altrnativeFounds}
         >
-          <NicheOpportunities />
-        </DropDownMenu>
-        <DropDownMenu
-          title="alternative platforms"
-          linkButton={true}
-          name="platforms"
-          handleDropDown={handleDropDown}
-          open={isOpen.platforms}
-        >
-          <AlternativePlatforms />
+          <StructuredNotes input={alternativeFoundCards} />
         </DropDownMenu>
       </div>
     </section>
