@@ -9,6 +9,7 @@ type DropDownMenuProps = {
   linkButton?: boolean;
   name?: string;
   handleDropDown?: any;
+  shineTitle?: boolean;
 };
 
 function DropDownMenu({
@@ -18,6 +19,7 @@ function DropDownMenu({
   linkButton,
   name,
   handleDropDown,
+  shineTitle
 }: DropDownMenuProps) {
   return (
     <div className="dropDownContainer">
@@ -25,9 +27,17 @@ function DropDownMenu({
         <IconDD />
         <div className='divHandleDropDown' onClick={handleDropDown}>
           <div className="divTitleArrow" id={name}>
-            <span className="spanTitles" id={name}>
-              {title}
-            </span>
+            {
+              shineTitle ?
+                <span className="shineTitle" id={name}>
+                  {title}
+                </span>
+                :
+                <span className="spanTitles" id={name}>
+                  {title}
+                </span>
+
+            }
             <SlArrowDown
               className={`arrow ${open ? 'arrowD' : 'arrowR'}`}
               id={name}

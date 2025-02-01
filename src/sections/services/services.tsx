@@ -117,6 +117,7 @@ export function Services() {
           name="singleDeals"
           handleDropDown={handleDropDown}
           open={isOpen.singleDeals}
+          shineTitle={true}
         >
           <ClubDeals />
         </DropDownMenu>
