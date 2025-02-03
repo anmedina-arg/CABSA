@@ -1,7 +1,6 @@
 .divContainerCards {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -13,8 +12,10 @@
   width: auto;
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
   .divContainerCards {
+    display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
   }
 
@@ -23,7 +24,7 @@
   }
 }
 
-@media (width > 768px) and (width <= 991px) {
+@media (width > 768px) and (width <=991px) {
   .logo {
     height: 4rem;
   }
