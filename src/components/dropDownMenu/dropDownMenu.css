@@ -34,7 +34,7 @@
   margin-left: 4rem;
   z-index: 2;
   line-height: 1;
-  background: linear-gradient(to right, #4d4d4d 20%, white 50%, #4d4d4d 100%);
+  background: linear-gradient(-45deg, white 10%, #616161 20%, white 30%);
   background-size: 200% auto;
   /* Permite el desplazamiento del gradiente */
   background-clip: text;
